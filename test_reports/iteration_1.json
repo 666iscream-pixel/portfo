@@ -1,0 +1,25 @@
+{
+  "summary": "Smoke tested portfolio backend (5 endpoints) and frontend (sticky nav, hero CTAs, 4 case studies, contact form happy path + invalid email inline error, toast + form clear, mailto/linkedin links, footer). Everything passes against the public preview URL.",
+  "tested_scope": ["backend", "frontend", "integration"],
+  "passed": [
+    "GET /api/ returns 200 with {'message':'Ihnat Zinkevich Portfolio API'}",
+    "POST /api/contact with valid payload returns 201 with full document (id, name, email, company, message, created_at)",
+    "POST /api/contact with bad email returns 422 (pydantic EmailStr validation)",
+    "POST /api/contact missing required fields returns 422 (name and message flagged)",
+    "GET /api/contact returns list of submissions including the one just created",
+    "Home page loads with site-nav, hero-cta-work, hero-cta-contact, contact-form, contact-submit-button, contact-email-link, contact-linkedin-link, and footer all rendered",
+    "All 4 case studies present (premium-service-website, lead-capture-workflow, offer-from-brief-workflow, selected-partner-implementation)",
+    "Hero CTA hero-cta-work scrolls to #work and hero-cta-contact scrolls to #contact",
+    "Contact form happy path: filled name/email/message, submitted, backend returned 201, Sonner toast 'Message sent. I’ll get back to you shortly.' visible, form fields cleared",
+    "Invalid email 'a@b' triggers inline 'INVALID EMAIL' error under email input (custom validator)",
+    "Sticky site-nav visible at top with WORK / ABOUT / CONTACT / LinkedIn links"
+  ],
+  "failed": [],
+  "notes": [
+    "Truly malformed emails like 'bad-email' (no @) are blocked by HTML5 native validation (input type=email + required) before the custom validator runs, so no inline message is shown for that case. The custom inline 'Invalid email' message still works for inputs that pass HTML5 but fail the stricter regex (e.g., 'a@b'). This is acceptable UX, not a bug."
+  ],
+  "action_items": [],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}

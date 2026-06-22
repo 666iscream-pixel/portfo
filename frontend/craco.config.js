@@ -61,6 +61,38 @@ let webpackConfig = {
 };
 
 webpackConfig.devServer = (devServerConfig) => {
+  // Compatibility shim: webpack-dev-server v5 dropped several v4 options that react-scripts 5 still emits.
+  // Translate / remove them so dev-server schema validation passes.
+  const onBefore = devServerConfig.onBeforeSetupMiddleware;
+  const onAfter = devServerConfig.onAfterSetupMiddleware;
+  if (onBefore || onAfter) {
+    delete devServerConfig.onBeforeSetupMiddleware;
+    delete devServerConfig.onAfterSetupMiddleware;
+    const prevSetup = devServerConfig.setupMiddlewares;
+    devServerConfig.setupMiddlewares = (middlewares, devServer) => {
+      if (onBefore) onBefore(devServer);
+      const next = prevSetup ? prevSetup(middlewares, devServer) : middlewares;
+      if (onAfter) onAfter(devServer);
+      return next;
+    };
+  }
+  if ('https' in devServerConfig) {
+    const httpsVal = devServerConfig.https;
+    delete devServerConfig.https;
+    if (httpsVal) {
+      devServerConfig.server = typeof httpsVal === 'object'
+        ? { type: 'https', options: httpsVal }
+        : 'https';
+    }
+  }
+  // Drop other removed v4 options that schema rejects in v5
+  ['public', 'sockHost', 'sockPath', 'sockPort', 'inline', 'overlay', 'clientLogLevel', 'contentBase', 'contentBasePublicPath', 'watchContentBase', 'writeToDisk', 'disableHostCheck', 'transportMode', 'serveIndex'].forEach((k) => {
+    if (k in devServerConfig) delete devServerConfig[k];
+  });
+  if (devServerConfig.allowedHosts === 'all' || devServerConfig.allowedHosts === undefined) {
+    devServerConfig.allowedHosts = 'all';
+  }
+
   // Add health check endpoints if enabled
   if (config.enableHealthCheck && setupHealthEndpoints && healthPluginInstance) {
     const originalSetupMiddlewares = devServerConfig.setupMiddlewares;

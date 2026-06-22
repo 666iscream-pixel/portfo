@@ -1,40 +1,26 @@
-import { useEffect } from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-import { HOME } from "@/constants/testIds";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { Toaster } from "sonner";
+import { Nav } from "@/components/portfolio/Nav";
+import { Hero } from "@/components/portfolio/Hero";
+import { Work } from "@/components/portfolio/Work";
+import { About } from "@/components/portfolio/About";
+import { Contact } from "@/components/portfolio/Contact";
+import { Footer } from "@/components/portfolio/Footer";
+import { useReveal } from "@/hooks/useReveal";
 
 const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
+  useReveal();
   return (
-    <div>
-      <header className="App-header">
-        <a
-          data-testid={HOME.emergentLink}
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
+    <div data-testid="home-page" className="min-h-screen bg-[#F4F4F0] text-[#0F0F0F]">
+      <Nav />
+      <main>
+        <Hero />
+        <Work />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 };
@@ -43,10 +29,19 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Toaster
+          position="bottom-right"
+          toastOptions={{
+            classNames: {
+              toast:
+                "!rounded-none !border !border-[#0F0F0F] !bg-[#F4F4F0] !text-[#0F0F0F] !font-mono shadow-[4px_4px_0_0_#0F0F0F]",
+              title: "!font-mono !uppercase !tracking-[0.16em] !text-xs",
+              description: "!font-display !text-sm !text-[#0F0F0F]",
+            },
+          }}
+        />
         <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
+          <Route path="/" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </div>
