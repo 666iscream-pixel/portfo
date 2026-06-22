@@ -1,17 +1,25 @@
-import { profile } from "../../data/portfolio";
-
-const marqueeItems = [
-  "SYSTEMS",
-  "WORKFLOWS",
-  "AUTOMATION",
-  "WEBSITES",
-  "LEAD FLOWS",
-  "BOOKINGS",
-  "FOLLOW-UP",
-  "OFFERS",
-];
+import { useT } from "../../i18n/I18nContext";
 
 export const Hero = () => {
+  const t = useT();
+  const items = t.hero.marquee;
+
+  // Replace the highlighted phrase with an accent-colored span inside the headline.
+  const renderHeadlineC = () => {
+    const { headlineC, headlineHighlight } = t.hero;
+    if (!headlineHighlight || !headlineC.includes(headlineHighlight)) {
+      return headlineC;
+    }
+    const [before, after] = headlineC.split(headlineHighlight);
+    return (
+      <>
+        {before}
+        <span className="text-[#FF3E1A]">{headlineHighlight}</span>
+        {after}
+      </>
+    );
+  };
+
   return (
     <section
       id="top"
@@ -23,43 +31,42 @@ export const Hero = () => {
         {/* Meta row */}
         <div className="flex flex-col gap-3 border-b border-ink/30 pb-6 font-mono-tech text-xs uppercase tracking-[0.18em] text-[#555555] sm:flex-row sm:items-center sm:justify-between sm:pb-8">
           <span data-testid="hero-meta-location">
-            <span className="text-[#0F0F0F]">[01]</span> &nbsp;Based in {profile.location}
+            <span className="text-[#0F0F0F]">[01]</span> &nbsp;{t.hero.metaLocation}
           </span>
           <span className="hidden sm:inline">
-            <span className="text-[#0F0F0F]">[02]</span> &nbsp;Available for new engagements
+            <span className="text-[#0F0F0F]">[02]</span> &nbsp;{t.hero.metaAvailable}
           </span>
           <span>
-            <span className="text-[#0F0F0F]">[03]</span> &nbsp;
-            {new Date().getFullYear()} / Portfolio v.01
+            <span className="text-[#0F0F0F]">[03]</span> &nbsp;{new Date().getFullYear()} / {t.hero.metaPortfolio}
           </span>
         </div>
 
-        {/* Massive headline */}
+        {/* Headline */}
         <div className="grid grid-cols-12 gap-x-6 pt-10 sm:pt-16">
-          <div className="reveal col-span-12 lg:col-span-9">
+          <div className="reveal col-span-12 lg:col-span-10">
             <p
               data-testid="hero-eyebrow"
               className="mb-6 inline-block border border-ink bg-[#F4F4F0] px-3 py-1 font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#0F0F0F] sm:text-xs"
             >
               <span className="mr-2 inline-block h-2 w-2 -translate-y-[1px] bg-[#FF3E1A]" />
-              {profile.role}
+              {t.hero.eyebrow}
             </p>
             <h1
               data-testid="hero-headline"
-              className="font-display text-[44px] font-black uppercase leading-[0.92] tracking-tighter text-[#0F0F0F] sm:text-7xl lg:text-[110px]"
+              className="font-display text-[40px] font-black uppercase leading-[0.95] tracking-tighter text-[#0F0F0F] sm:text-6xl lg:text-[92px]"
             >
-              I fix digital
+              {t.hero.headlineA}
               <br />
-              <span className="text-[#FF3E1A]">bottlenecks</span> for
+              {t.hero.headlineB}
               <br />
-              service businesses.
+              {renderHeadlineC()}
             </h1>
           </div>
 
           <div className="col-span-12 mt-8 grid grid-cols-12 gap-x-6 gap-y-10 lg:col-span-12 lg:mt-14">
             <div className="reveal col-span-12 sm:col-span-7 lg:col-span-6 lg:col-start-7">
               <p className="font-display text-base font-medium leading-relaxed text-[#0F0F0F] sm:text-lg">
-                {profile.bio}
+                {t.hero.bio}
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <a
@@ -67,7 +74,7 @@ export const Hero = () => {
                   data-testid="hero-cta-work"
                   className="group inline-flex items-center gap-3 border border-ink bg-[#0F0F0F] px-5 py-3 font-mono-tech text-xs uppercase tracking-[0.18em] text-[#F4F4F0] transition-all hover:-translate-x-[2px] hover:-translate-y-[2px] hover:bg-[#FF3E1A] hover:shadow-[4px_4px_0_0_#0F0F0F]"
                 >
-                  See selected work
+                  {t.hero.ctaWork}
                   <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
                 </a>
                 <a
@@ -75,20 +82,22 @@ export const Hero = () => {
                   data-testid="hero-cta-contact"
                   className="inline-flex items-center gap-3 border border-ink bg-transparent px-5 py-3 font-mono-tech text-xs uppercase tracking-[0.18em] text-[#0F0F0F] transition-all hover:bg-[#0F0F0F] hover:text-[#F4F4F0]"
                 >
-                  Start a project
+                  {t.hero.ctaContact}
                 </a>
               </div>
             </div>
 
             <aside className="reveal col-span-12 border-t border-ink/30 pt-8 sm:col-span-5 sm:border-l sm:border-t-0 sm:pl-6 sm:pt-0 lg:col-span-3 lg:col-start-1 lg:row-start-1">
               <p className="font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#555555]">
-                / What I do
+                / {t.hero.whatIDo}
               </p>
               <ul className="mt-4 space-y-2 font-display text-sm text-[#0F0F0F] sm:text-base">
-                <li className="flex items-start gap-2"><span className="mt-2 inline-block h-px w-3 bg-[#0F0F0F]" />Websites & booking experiences</li>
-                <li className="flex items-start gap-2"><span className="mt-2 inline-block h-px w-3 bg-[#0F0F0F]" />Lead capture & follow-up</li>
-                <li className="flex items-start gap-2"><span className="mt-2 inline-block h-px w-3 bg-[#0F0F0F]" />Offer & document automation</li>
-                <li className="flex items-start gap-2"><span className="mt-2 inline-block h-px w-3 bg-[#0F0F0F]" />Discovery, scope & QA</li>
+                {t.hero.capabilities.map((c) => (
+                  <li key={c} className="flex items-start gap-2">
+                    <span className="mt-2 inline-block h-px w-3 bg-[#0F0F0F]" />
+                    {c}
+                  </li>
+                ))}
               </ul>
             </aside>
           </div>
@@ -101,7 +110,7 @@ export const Hero = () => {
         className="relative overflow-hidden border-t border-ink bg-[#0F0F0F] py-4"
       >
         <div className="marquee-track flex whitespace-nowrap will-change-transform">
-          {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, i) => (
+          {[...items, ...items, ...items].map((item, i) => (
             <span
               key={`${item}-${i}`}
               className="mx-8 inline-flex items-center gap-8 font-mono-tech text-sm uppercase tracking-[0.3em] text-[#F4F4F0]"

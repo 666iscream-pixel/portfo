@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
+import { useT } from "../../i18n/I18nContext";
+import { LangSwitcher } from "./LangSwitcher";
 
 export const Nav = () => {
+  const t = useT();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -20,7 +23,7 @@ export const Nav = () => {
         scrolled ? "shadow-[0_1px_0_0_#0F0F0F]" : ""
       }`}
     >
-      <div className="mx-auto flex max-w-[1480px] items-center justify-between px-5 py-4 sm:px-8 sm:py-5">
+      <div className="mx-auto flex max-w-[1480px] items-center justify-between gap-4 px-5 py-4 sm:px-8 sm:py-5">
         <a
           href="#top"
           data-testid="nav-logo"
@@ -35,26 +38,31 @@ export const Nav = () => {
           </span>
         </a>
 
-        <nav className="flex items-center gap-6 sm:gap-10">
+        <nav className="flex items-center gap-4 sm:gap-8">
           <a href="#work" data-testid="nav-work-link" className={linkBase}>
-            Work
+            {t.nav.work}
           </a>
           <a href="#about" data-testid="nav-about-link" className={`${linkBase} hidden sm:inline`}>
-            About
+            {t.nav.about}
           </a>
           <a href="#contact" data-testid="nav-contact-link" className={linkBase}>
-            Contact
+            {t.nav.contact}
           </a>
+          <LangSwitcher className="hidden sm:inline-flex" />
           <a
             href="https://www.linkedin.com/in/ihnat-zinkevich/"
             target="_blank"
             rel="noreferrer noopener"
             data-testid="nav-linkedin-link"
-            className="hidden border border-ink bg-[#0F0F0F] px-3 py-2 font-mono-tech text-xs uppercase tracking-[0.18em] text-[#F4F4F0] transition-transform hover:-translate-y-[2px] hover:bg-[#FF3E1A] sm:inline-block"
+            className="hidden border border-ink bg-[#0F0F0F] px-3 py-2 font-mono-tech text-xs uppercase tracking-[0.18em] text-[#F4F4F0] transition-transform hover:-translate-y-[2px] hover:bg-[#FF3E1A] md:inline-block"
           >
-            LinkedIn ↗
+            {t.nav.linkedin} ↗
           </a>
         </nav>
+      </div>
+      {/* Mobile lang switcher row */}
+      <div className="flex justify-end border-t border-ink/15 px-5 py-2 sm:hidden">
+        <LangSwitcher />
       </div>
     </header>
   );

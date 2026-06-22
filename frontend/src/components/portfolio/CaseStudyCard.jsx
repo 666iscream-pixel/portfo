@@ -1,4 +1,4 @@
-export const CaseStudyCard = ({ caseStudy, reverse = false }) => {
+export const CaseStudyCard = ({ caseStudy, caseLabel = "Case", reverse = false }) => {
   const { index, slug, title, client, role, summary, detail, image, tags } =
     caseStudy;
 
@@ -20,7 +20,7 @@ export const CaseStudyCard = ({ caseStudy, reverse = false }) => {
             className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
           />
           <span className="pointer-events-none absolute left-0 top-0 border-b border-r border-ink bg-[#0F0F0F] px-3 py-1 font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#F4F4F0]">
-            Case · {index}
+            {caseLabel} · {index}
           </span>
         </div>
       </div>
@@ -52,7 +52,6 @@ export const CaseStudyCard = ({ caseStudy, reverse = false }) => {
           {tags.map((tag) => (
             <span
               key={tag}
-              data-testid={`tag-${slug}-${tag.toLowerCase().replace(/\s+/g, "-")}`}
               className="border border-ink bg-transparent px-2.5 py-1 font-mono-tech text-[10px] uppercase tracking-[0.16em] text-[#0F0F0F]"
             >
               {tag}

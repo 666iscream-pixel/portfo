@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
 import { profile } from "../../data/portfolio";
+import { useT } from "../../i18n/I18nContext";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -20,17 +21,18 @@ const inputClass =
   "w-full border border-ink bg-[#F4F4F0] px-4 py-3 font-display text-base text-[#0F0F0F] placeholder:text-[#555555] focus:outline-none focus:ring-2 focus:ring-[#FF3E1A] focus:ring-offset-0";
 
 export const Contact = () => {
+  const t = useT();
   const [form, setForm] = useState(initial);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
 
   const validate = () => {
     const e = {};
-    if (!form.name.trim()) e.name = "Required";
-    if (!form.email.trim()) e.email = "Required";
+    if (!form.name.trim()) e.name = t.contact.form.required;
+    if (!form.email.trim()) e.email = t.contact.form.required;
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
-      e.email = "Invalid email";
-    if (!form.message.trim()) e.message = "Required";
+      e.email = t.contact.form.invalidEmail;
+    if (!form.message.trim()) e.message = t.contact.form.required;
     setErrors(e);
     return Object.keys(e).length === 0;
   };
@@ -48,15 +50,11 @@ export const Contact = () => {
         company: form.company.trim() || null,
         message: form.message.trim(),
       });
-      toast.success("Message sent. I’ll get back to you shortly.");
+      toast.success(t.contact.form.toastSuccess);
       setForm(initial);
     } catch (err) {
       const detail = err?.response?.data?.detail;
-      toast.error(
-        typeof detail === "string"
-          ? detail
-          : "Could not send your message. Please try again."
-      );
+      toast.error(typeof detail === "string" ? detail : t.contact.form.toastError);
     } finally {
       setSubmitting(false);
     }
@@ -73,23 +71,24 @@ export const Contact = () => {
           {/* Left */}
           <div className="col-span-12 lg:col-span-5">
             <p className="font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#555555]">
-              / Section 04 — Contact
+              {t.contact.eyebrow}
             </p>
             <h2
               data-testid="contact-heading"
               className="mt-4 font-display text-4xl font-black uppercase leading-[0.95] tracking-tight text-[#0F0F0F] sm:text-6xl"
             >
-              Have a <span className="text-[#FF3E1A]">bottleneck</span> worth fixing?
+              {t.contact.headingA}{" "}
+              <span className="text-[#FF3E1A]">{t.contact.headingHighlight}</span>{" "}
+              {t.contact.headingB}
             </h2>
             <p className="mt-6 max-w-md font-display text-base leading-relaxed text-[#0F0F0F] sm:text-lg">
-              Share a few details about your business and the problem you’re
-              solving. I usually reply within 1–2 working days.
+              {t.contact.subheading}
             </p>
 
             <div className="mt-10 space-y-5 border-t border-ink/30 pt-8">
               <div>
                 <p className="font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#555555]">
-                  Email
+                  {t.contact.emailLabel}
                 </p>
                 <a
                   href={`mailto:${profile.email}`}
@@ -101,7 +100,7 @@ export const Contact = () => {
               </div>
               <div>
                 <p className="font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#555555]">
-                  LinkedIn
+                  {t.contact.linkedinLabel}
                 </p>
                 <a
                   href={profile.linkedin}
@@ -115,10 +114,10 @@ export const Contact = () => {
               </div>
               <div>
                 <p className="font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#555555]">
-                  Location
+                  {t.contact.locationLabel}
                 </p>
                 <p className="font-display text-lg font-bold text-[#0F0F0F]">
-                  {profile.location}
+                  {t.contact.locationValue}
                 </p>
               </div>
             </div>
@@ -133,7 +132,7 @@ export const Contact = () => {
           >
             <div className="grid grid-cols-2 gap-6">
               <div className="col-span-2 sm:col-span-1">
-                <FieldLabel htmlFor="name">Name *</FieldLabel>
+                <FieldLabel htmlFor="name">{t.contact.form.name}</FieldLabel>
                 <input
                   id="name"
                   data-testid="contact-name-input"
@@ -141,7 +140,7 @@ export const Contact = () => {
                   value={form.name}
                   onChange={onChange("name")}
                   className={inputClass}
-                  placeholder="Your name"
+                  placeholder={t.contact.form.namePlaceholder}
                   required
                 />
                 {errors.name && (
@@ -151,7 +150,7 @@ export const Contact = () => {
                 )}
               </div>
               <div className="col-span-2 sm:col-span-1">
-                <FieldLabel htmlFor="email">Email *</FieldLabel>
+                <FieldLabel htmlFor="email">{t.contact.form.email}</FieldLabel>
                 <input
                   id="email"
                   data-testid="contact-email-input"
@@ -159,7 +158,7 @@ export const Contact = () => {
                   value={form.email}
                   onChange={onChange("email")}
                   className={inputClass}
-                  placeholder="you@company.com"
+                  placeholder={t.contact.form.emailPlaceholder}
                   required
                 />
                 {errors.email && (
@@ -169,7 +168,7 @@ export const Contact = () => {
                 )}
               </div>
               <div className="col-span-2">
-                <FieldLabel htmlFor="company">Company (optional)</FieldLabel>
+                <FieldLabel htmlFor="company">{t.contact.form.company}</FieldLabel>
                 <input
                   id="company"
                   data-testid="contact-company-input"
@@ -177,18 +176,18 @@ export const Contact = () => {
                   value={form.company}
                   onChange={onChange("company")}
                   className={inputClass}
-                  placeholder="Company / studio"
+                  placeholder={t.contact.form.companyPlaceholder}
                 />
               </div>
               <div className="col-span-2">
-                <FieldLabel htmlFor="message">Project details *</FieldLabel>
+                <FieldLabel htmlFor="message">{t.contact.form.message}</FieldLabel>
                 <textarea
                   id="message"
                   data-testid="contact-message-input"
                   value={form.message}
                   onChange={onChange("message")}
                   className={`${inputClass} min-h-[160px] resize-y`}
-                  placeholder="What are you trying to solve? Tell me about the bottleneck, the audience and the timeline."
+                  placeholder={t.contact.form.messagePlaceholder}
                   required
                 />
                 {errors.message && (
@@ -201,7 +200,7 @@ export const Contact = () => {
 
             <div className="mt-8 flex flex-col items-start gap-4 border-t border-ink/30 pt-6 sm:flex-row sm:items-center sm:justify-between">
               <p className="font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#555555]">
-                Replies within 1–2 working days
+                {t.contact.form.replies}
               </p>
               <button
                 type="submit"
@@ -209,7 +208,7 @@ export const Contact = () => {
                 disabled={submitting}
                 className="group inline-flex items-center gap-3 border border-ink bg-[#0F0F0F] px-6 py-3 font-mono-tech text-xs uppercase tracking-[0.18em] text-[#F4F4F0] transition-all hover:-translate-x-[2px] hover:-translate-y-[2px] hover:bg-[#FF3E1A] hover:shadow-[4px_4px_0_0_#0F0F0F] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:bg-[#0F0F0F] disabled:hover:shadow-none"
               >
-                {submitting ? "Sending…" : "Send message"}
+                {submitting ? t.contact.form.submitting : t.contact.form.submit}
                 <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
               </button>
             </div>

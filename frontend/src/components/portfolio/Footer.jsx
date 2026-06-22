@@ -1,28 +1,27 @@
 import { profile } from "../../data/portfolio";
+import { useT } from "../../i18n/I18nContext";
 
 export const Footer = () => {
+  const t = useT();
   return (
-    <footer
-      data-testid="site-footer"
-      className="bg-[#0F0F0F] text-[#F4F4F0]"
-    >
+    <footer data-testid="site-footer" className="bg-[#0F0F0F] text-[#F4F4F0]">
       <div className="mx-auto max-w-[1480px] px-5 py-12 sm:px-8 sm:py-16">
         <div className="grid grid-cols-12 gap-x-6 gap-y-10">
           <div className="col-span-12 lg:col-span-7">
             <p className="font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#F4F4F0]/60">
-              / Let’s build a calmer system
+              {t.footer.eyebrow}
             </p>
             <h3 className="mt-4 font-display text-3xl font-black uppercase leading-[0.95] tracking-tight sm:text-5xl">
-              Less chaos.
+              {t.footer.headlineA}
               <br />
-              <span className="text-[#FF3E1A]">More throughput.</span>
+              <span className="text-[#FF3E1A]">{t.footer.headlineB}</span>
             </h3>
           </div>
 
           <div className="col-span-12 grid grid-cols-2 gap-6 lg:col-span-5">
             <div>
               <p className="font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#F4F4F0]/60">
-                Contact
+                {t.footer.contactLabel}
               </p>
               <a
                 href={`mailto:${profile.email}`}
@@ -34,7 +33,7 @@ export const Footer = () => {
             </div>
             <div>
               <p className="font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#F4F4F0]/60">
-                Social
+                {t.footer.socialLabel}
               </p>
               <a
                 href={profile.linkedin}
@@ -43,15 +42,17 @@ export const Footer = () => {
                 data-testid="footer-linkedin-link"
                 className="mt-2 inline-block font-display text-sm font-bold text-[#F4F4F0] underline decoration-[#FF3E1A] decoration-2 underline-offset-4 hover:text-[#FF3E1A] sm:text-base"
               >
-                LinkedIn ↗
+                {t.footer.linkedin}
               </a>
             </div>
           </div>
         </div>
 
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-[#F4F4F0]/20 pt-6 font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#F4F4F0]/60 sm:flex-row sm:items-center">
-          <span>© {new Date().getFullYear()} Ihnat Zinkevich — All rights reserved</span>
-          <span>Designed & built in {profile.location}</span>
+          <span>
+            © {new Date().getFullYear()} {profile.name} — {t.footer.rights}
+          </span>
+          <span>{t.footer.designedIn}</span>
         </div>
       </div>
     </footer>
