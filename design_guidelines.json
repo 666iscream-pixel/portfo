@@ -1,0 +1,83 @@
+{
+  "theme": "Light",
+  "archetype": "Archetype 4 (Swiss & High-Contrast) with Brutalist Editorial Twist",
+  "design_philosophy": "A confident, editorial, and systems-focused portfolio. Rejects generic 'soft' UX minimalism in favor of raw structure, high-contrast typography, and visible grids to emphasize Ihnat's role as a Digital Systems Developer fixing bottlenecks. Uses a 1px hard grid, zero border radius, and an industrial accent color.",
+  "colors": {
+    "background": "#F4F4F0",
+    "surface": "#FFFFFF",
+    "surface_secondary": "#EAEAEA",
+    "text_primary": "#0F0F0F",
+    "text_secondary": "#555555",
+    "accent_primary": "#FF3E1A",
+    "accent_hover": "#D92E10",
+    "border": "#0F0F0F"
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Cabinet Grotesk",
+      "body": "Satoshi",
+      "mono": "IBM Plex Mono"
+    },
+    "hierarchy": {
+      "h1": "text-5xl sm:text-7xl font-black tracking-tighter uppercase leading-none",
+      "h2": "text-3xl sm:text-5xl font-bold tracking-tight uppercase",
+      "h3": "text-xl sm:text-2xl font-bold",
+      "body": "text-base sm:text-lg font-medium leading-relaxed",
+      "mono_label": "text-xs sm:text-sm font-mono uppercase tracking-[0.1em]"
+    }
+  },
+  "layout": {
+    "spacing_system": "Generous and asymmetric. Use p-6, p-8, p-12, p-24.",
+    "grid_strategy": "The 'Technical' Look. Use visible 1px hard borders (border-collapse style) to separate sections. No soft shadows. Use hard offset shadows (e.g., shadow-[4px_4px_0px_#0F0F0F]) for interactive elements.",
+    "border_radius": "0px (Sharp edges only)",
+    "container": "Max-width 8xl, centered, with visible vertical border lines on the edges if possible."
+  },
+  "motion": {
+    "scroll": "Smooth scrolling via Lenis is MANDATORY.",
+    "interactions": "Hover states on case studies should feature a slight image zoom and a hard border color change. Buttons should translate slightly with the hard shadow adjusting to simulate pressing.",
+    "page_load": "Staggered reveal of the grid lines and typography."
+  },
+  "components": {
+    "navigation": "Sticky top bar with glassmorphism (backdrop-blur-md) OR a solid #F4F4F0 bg with a hard 1px bottom border. Must include Logo, Work, Contact, and LinkedIn links.",
+    "hero": "Massive typography introducing Ihnat. Use a Marquee with IBM Plex Mono reading 'SYSTEMS • WORKFLOWS • AUTOMATION' across the screen.",
+    "case_study_card": "A raw, border-enclosed rectangular container. Image takes up top 60%, content at the bottom. Tags (chips) use mono font with 1px solid borders.",
+    "contact_form": "Shadcn UI forms heavily customized: 0px border radius, 1px solid black border, focus state must use the accent color (ring-2 ring-[#FF3E1A] ring-offset-0). Submit button must have the hard drop shadow."
+  },
+  "media": {
+    "hero_background": {
+      "url": "https://images.pexels.com/photos/35696867/pexels-photo-35696867.jpeg",
+      "description": "Black and white abstract architectural geometry. Can be used as a subtle overlay or accent image in the hero section."
+    },
+    "case_study_1": {
+      "url": "https://images.pexels.com/photos/7820321/pexels-photo-7820321.jpeg",
+      "title": "Premium Service Website & Booking Experience",
+      "description": "Hotel receptionist handing a key card, symbolizing premium service desk."
+    },
+    "case_study_2": {
+      "url": "https://images.unsplash.com/photo-1709626011485-6fe000ea2dbc",
+      "title": "Lead Capture & Follow-up Workflow",
+      "description": "Abstract black and blue geometric structure symbolizing digital workflow and routing."
+    },
+    "case_study_3": {
+      "url": "https://images.pexels.com/photos/19650853/pexels-photo-19650853.jpeg",
+      "title": "Offer From Brief Workflow",
+      "description": "Architectural floor plans and a pen on a desk, symbolizing blueprinting and B2B document offers."
+    },
+    "case_study_4": {
+      "url": "https://images.pexels.com/photos/29570753/pexels-photo-29570753.jpeg",
+      "title": "Selected Partner Implementation",
+      "description": "Geodesic dome structure showing geometric integration and solid partnership architecture."
+    }
+  },
+  "accessibility_and_testing": {
+    "contrast": "Ensure all text against #F4F4F0 meets strict WCAG AA contrast. The accent #FF3E1A must be paired with white or #F4F4F0 text if used as a background.",
+    "testing_attributes": "Add data-testid attributes to all interactive elements (e.g., data-testid='contact-submit-button', data-testid='case-study-link-1')."
+  },
+  "instructions_to_main_agent": [
+    "Install and configure 'lenis' for smooth scrolling.",
+    "Do NOT use standard Shadcn cards with rounded corners and soft shadows. Override Shadcn styles to feature 0px border-radius and 1px solid #0F0F0F borders.",
+    "Implement the 'Technical' grid layout: visible grid lines separating major sections and case studies.",
+    "Ensure typography hierarchy is strictly followed, using Cabinet Grotesk for headings and IBM Plex Mono for technical details/tags.",
+    "Build the contact form using Shadcn components (Input, Textarea, Button, Form) but strip away Vercel-like aesthetics to match the brutalist editorial theme."
+  ]
+}
