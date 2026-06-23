@@ -52,6 +52,7 @@ export const Work = () => {
               key={cs.slug}
               caseStudy={cs}
               caseLabel={t.caseLabel}
+              visitLiveLabel={t.work.visitLive}
               reverse={idx % 2 === 1}
             />
           ))}

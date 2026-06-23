@@ -1,8 +1,10 @@
 export const profile = {
   name: "Ihnat Zinkevich",
-  role: "Digital Systems Developer",
+  role: "Web Design · Development · Automation",
   location: "Warsaw, Poland",
   email: "ihnatzinkevich@gmail.com",
+  phone: "+48 506 779 631",
+  phoneHref: "+48506779631",
   linkedin: "https://www.linkedin.com/in/ihnat-zinkevich/",
   telegram: "https://t.me/cactusovic",
   telegramHandle: "@cactusovic",

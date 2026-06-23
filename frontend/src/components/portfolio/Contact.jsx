@@ -100,6 +100,18 @@ export const Contact = () => {
               </div>
               <div>
                 <p className="font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#555555]">
+                  {t.contact.phoneLabel}
+                </p>
+                <a
+                  href={`tel:${profile.phoneHref}`}
+                  data-testid="contact-phone-link"
+                  className="font-display text-lg font-bold text-[#0F0F0F] underline decoration-[#FF3E1A] decoration-2 underline-offset-4 hover:text-[#FF3E1A]"
+                >
+                  {profile.phone}
+                </a>
+              </div>
+              <div>
+                <p className="font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#555555]">
                   {t.contact.linkedinLabel}
                 </p>
                 <a

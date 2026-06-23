@@ -11,11 +11,8 @@ const PortraitCard = ({ caption, className = "" }) => (
         src={profile.photo}
         alt={profile.name}
         loading="eager"
-        className="aspect-[4/5] w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-[1.03]"
+        className="aspect-[4/5] w-full object-cover object-top grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-[1.03]"
       />
-      <span className="pointer-events-none absolute left-0 top-0 border-b border-r border-ink bg-[#0F0F0F] px-2.5 py-1 font-mono-tech text-[9px] uppercase tracking-[0.22em] text-[#F4F4F0]">
-        {profile.role}
-      </span>
     </div>
     <figcaption className="mt-2 flex items-center justify-between gap-2 px-1 font-mono-tech text-[10px] uppercase tracking-[0.18em] text-[#0F0F0F]">
       <span>{caption}</span>
@@ -84,8 +81,12 @@ export const Hero = () => {
               className="font-display text-[40px] font-black uppercase leading-[0.95] tracking-tighter text-[#0F0F0F] sm:text-6xl lg:text-[88px]"
             >
               {t.hero.headlineA}
-              <br />
-              {t.hero.headlineB}
+              {t.hero.headlineB ? (
+                <>
+                  <br />
+                  {t.hero.headlineB}
+                </>
+              ) : null}
               <br />
               {renderHeadlineC()}
             </h1>

@@ -1,5 +1,10 @@
-export const CaseStudyCard = ({ caseStudy, caseLabel = "Case", reverse = false }) => {
-  const { index, slug, title, client, role, summary, detail, image, tags } =
+export const CaseStudyCard = ({
+  caseStudy,
+  caseLabel = "Case",
+  visitLiveLabel = "Visit live site",
+  reverse = false,
+}) => {
+  const { index, slug, title, client, role, summary, detail, image, tags, liveUrl } =
     caseStudy;
 
   return (
@@ -13,12 +18,30 @@ export const CaseStudyCard = ({ caseStudy, caseLabel = "Case", reverse = false }
         }`}
       >
         <div className="relative overflow-hidden border border-ink bg-[#EAEAEA]">
-          <img
-            src={image}
-            alt={title}
-            loading="lazy"
-            className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-          />
+          {liveUrl ? (
+            <a
+              href={liveUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+              data-testid={`case-image-link-${slug}`}
+              className="block"
+              aria-label={`${visitLiveLabel} — ${title}`}
+            >
+              <img
+                src={image}
+                alt={title}
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]"
+              />
+            </a>
+          ) : (
+            <img
+              src={image}
+              alt={title}
+              loading="lazy"
+              className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+            />
+          )}
           <span className="pointer-events-none absolute left-0 top-0 border-b border-r border-ink bg-[#0F0F0F] px-3 py-1 font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#F4F4F0]">
             {caseLabel} · {index}
           </span>
@@ -46,6 +69,18 @@ export const CaseStudyCard = ({ caseStudy, caseLabel = "Case", reverse = false }
           <p className="mt-3 font-display text-sm leading-relaxed text-[#555555] sm:text-base">
             {detail}
           </p>
+          {liveUrl && (
+            <a
+              href={liveUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+              data-testid={`case-live-link-${slug}`}
+              className="mt-5 inline-flex items-center gap-2 border border-ink bg-[#0F0F0F] px-4 py-2 font-mono-tech text-[10px] uppercase tracking-[0.18em] text-[#F4F4F0] transition-all hover:-translate-x-[2px] hover:-translate-y-[2px] hover:bg-[#FF3E1A] hover:shadow-[3px_3px_0_0_#0F0F0F]"
+            >
+              {visitLiveLabel}
+              <span aria-hidden>↗</span>
+            </a>
+          )}
         </div>
 
         <div className="mt-6 flex flex-wrap gap-2">
