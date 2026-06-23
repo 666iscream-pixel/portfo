@@ -38,9 +38,11 @@ export const Work = () => {
                 );
               })()}
             </h2>
-            <p className="mt-6 max-w-2xl font-display text-base text-[#555555] sm:text-lg">
-              {t.work.subheading}
-            </p>
+            {t.work.subheading && (
+              <p className="mt-6 max-w-2xl font-display text-base text-[#555555] sm:text-lg">
+                {t.work.subheading}
+              </p>
+            )}
           </div>
         </header>
 

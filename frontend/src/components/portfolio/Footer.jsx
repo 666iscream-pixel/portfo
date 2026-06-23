@@ -18,8 +18,8 @@ export const Footer = () => {
             </h3>
           </div>
 
-          <div className="col-span-12 grid grid-cols-2 gap-6 lg:col-span-5">
-            <div>
+          <div className="col-span-12 flex flex-wrap gap-x-10 gap-y-8 lg:col-span-5 lg:justify-end">
+            <div className="min-w-[180px]">
               <p className="font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#F4F4F0]/60">
                 {t.footer.contactLabel}
               </p>
@@ -31,9 +31,9 @@ export const Footer = () => {
                 {profile.email}
               </a>
             </div>
-            <div>
+            <div className="min-w-[100px]">
               <p className="font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#F4F4F0]/60">
-                {t.footer.socialLabel}
+                LinkedIn
               </p>
               <a
                 href={profile.linkedin}
@@ -45,14 +45,25 @@ export const Footer = () => {
                 {t.footer.linkedin}
               </a>
             </div>
+            <div className="min-w-[100px]">
+              <p className="font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#F4F4F0]/60">
+                Telegram
+              </p>
+              <a
+                href={profile.telegram}
+                target="_blank"
+                rel="noreferrer noopener"
+                data-testid="footer-telegram-link"
+                className="mt-2 inline-block font-display text-sm font-bold text-[#F4F4F0] underline decoration-[#FF3E1A] decoration-2 underline-offset-4 hover:text-[#FF3E1A] sm:text-base"
+              >
+                {t.footer.telegram}
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-[#F4F4F0]/20 pt-6 font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#F4F4F0]/60 sm:flex-row sm:items-center">
-          <span>
-            © {new Date().getFullYear()} {profile.name} — {t.footer.rights}
-          </span>
-          <span>{t.footer.designedIn}</span>
+        <div className="mt-12 border-t border-[#F4F4F0]/20 pt-6 font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#F4F4F0]/60">
+          © {new Date().getFullYear()} {profile.name} — {t.footer.rights}
         </div>
       </div>
     </footer>

@@ -13,7 +13,7 @@ const sharedImages = {
 
 const en = {
   meta: { htmlLang: "en" },
-  nav: { work: "Work", about: "About", contact: "Contact", linkedin: "LinkedIn" },
+  nav: { work: "Work", about: "About", contact: "Contact", linkedin: "LinkedIn", telegram: "Telegram" },
   hero: {
     metaLocation: "Based in Warsaw, Poland",
     metaAvailable: "Available for new engagements",
@@ -35,14 +35,14 @@ const en = {
       "Discovery, scope & QA",
     ],
     marquee: ["SYSTEMS", "WORKFLOWS", "AUTOMATION", "WEBSITES", "LEAD FLOWS", "BOOKINGS", "FOLLOW-UP", "OFFERS"],
+    portraitCaption: "Ihnat Zinkevich · Warsaw",
   },
   work: {
     eyebrow: "/ Section 02 — Selected work",
     headingA: "Selected work and",
     headingB: "workflow examples.",
     headingHighlight: "workflow",
-    subheading:
-      "A real client project and focused workflow examples around websites, lead capture, follow-up and document preparation.",
+    subheading: "",
   },
   about: {
     eyebrow: "/ Section 03 — About",
@@ -53,10 +53,22 @@ const en = {
     currentlyLabel: "Currently",
     currentlyValue: "Accepting projects",
     principles: [
-      { t: "Clarity before code.", d: "Discovery, scope and a clear definition of success come before any pixels or pipelines." },
-      { t: "Systems, not screens.", d: "Each interface is part of a flow — booking, follow-up, document handoff. The flow is the product." },
-      { t: "Lightweight & maintainable.", d: "Lean stacks, CMS-ready content and automations a team can actually own after launch." },
-      { t: "Partner where useful.", d: "For complex builds, I collaborate with vetted partner developers and automation specialists." },
+      {
+        t: "Clarity before code.",
+        d: "I start by defining the real task: who the system is for, what action matters, and what needs to become easier for the business.",
+      },
+      {
+        t: "Clear next steps.",
+        d: "Every page, form or workflow should make the next action obvious for the client and easier for the team to handle.",
+      },
+      {
+        t: "Fast enough to matter.",
+        d: "I work in focused iterations: define the first useful version, build it quickly, and improve from real feedback instead of dragging the project through endless planning.",
+      },
+      {
+        t: "Partner where useful.",
+        d: "For more complex builds, I work with trusted technical partners while keeping discovery, scope, QA and communication clear.",
+      },
     ],
   },
   contact: {
@@ -65,9 +77,10 @@ const en = {
     headingHighlight: "digital task",
     headingB: "that’s been stuck?",
     subheading:
-      "Share what you’re trying to improve — a website, booking path, lead flow, follow-up or document workflow. I’ll reply within 1–2 working days.",
+      "Share what you’re trying to improve — a website, booking path, lead flow, follow-up or document workflow.",
     emailLabel: "Email",
     linkedinLabel: "LinkedIn",
+    telegramLabel: "Telegram",
     locationLabel: "Location",
     locationValue: "Warsaw, Poland",
     form: {
@@ -82,7 +95,6 @@ const en = {
         "What are you trying to improve? Tell me about the task, the audience and the timeline.",
       required: "Required",
       invalidEmail: "Invalid email",
-      replies: "Replies within 1–2 working days",
       submit: "Send message",
       submitting: "Sending…",
       toastSuccess: "Message sent. I’ll get back to you shortly.",
@@ -96,8 +108,8 @@ const en = {
     contactLabel: "Contact",
     socialLabel: "Social",
     linkedin: "LinkedIn ↗",
+    telegram: "Telegram ↗",
     rights: "All rights reserved",
-    designedIn: "Designed & built in Warsaw, Poland",
   },
   caseStudies: [
     {
@@ -105,12 +117,12 @@ const en = {
       slug: "premium-service-website",
       image: sharedImages.cs1,
       title: "Premium Service Website & Booking Experience",
-      client: "Service Business Concept",
+      client: "Service business website",
       role: "Website design · Front-end · Booking flow · CMS-ready structure",
       summary:
-        "A premium website concept for a high-ticket service business, focused on turning visitor interest into clear inquiries and bookings.",
+        "A premium website for a high-ticket service business, focused on turning visitor interest into clear inquiries and bookings.",
       detail:
-        "The project includes a polished visual direction, mobile-first layout, service presentation, trust-building sections, clear calls to action and a CMS-ready content structure for future updates.",
+        "Includes a polished visual direction, mobile-first layout, service presentation, trust-building sections, clear calls to action and a CMS-ready content structure for future updates.",
       tags: ["Website Design", "Front-end", "Booking Flow", "Premium Services", "CMS-ready", "Mobile-first"],
     },
     {
@@ -118,7 +130,7 @@ const en = {
       slug: "lead-capture-workflow",
       image: sharedImages.cs2,
       title: "Lead Capture & Follow-up Workflow",
-      client: "Prototype for service businesses",
+      client: "Service business workflow",
       role: "Workflow automation · Lead routing · Follow-up logic",
       summary:
         "A lightweight workflow for service businesses receiving inquiries from forms, calls or direct messages.",
@@ -131,10 +143,10 @@ const en = {
       slug: "offer-from-brief-workflow",
       image: sharedImages.cs3,
       title: "Offer From Brief Workflow",
-      client: "Prototype for B2B & service businesses",
+      client: "B2B & service business workflow",
       role: "Document workflow · Sales support · Follow-up automation",
       summary:
-        "A workflow concept that turns a client brief, call notes or chat summary into structured requirements, an offer draft, an email draft and a follow-up task.",
+        "A workflow that turns a client brief, call notes or chat summary into structured requirements, an offer draft, an email draft and a follow-up task.",
       detail:
         "Designed for businesses that spend too much time manually preparing proposals, summaries and client follow-ups.",
       tags: ["Automation", "Offers", "Documents", "B2B", "Sales Workflow", "Follow-up"],
@@ -146,7 +158,7 @@ const en = {
 
 const pl = {
   meta: { htmlLang: "pl" },
-  nav: { work: "Prace", about: "O mnie", contact: "Kontakt", linkedin: "LinkedIn" },
+  nav: { work: "Prace", about: "O mnie", contact: "Kontakt", linkedin: "LinkedIn", telegram: "Telegram" },
   hero: {
     metaLocation: "Z siedzibą w Warszawie, Polska",
     metaAvailable: "Dostępny do nowych projektów",
@@ -168,14 +180,14 @@ const pl = {
       "Discovery, zakres i QA",
     ],
     marquee: ["SYSTEMY", "PROCESY", "AUTOMATYZACJA", "STRONY", "LEADY", "REZERWACJE", "FOLLOW-UP", "OFERTY"],
+    portraitCaption: "Ihnat Zinkevich · Warszawa",
   },
   work: {
     eyebrow: "/ Sekcja 02 — Wybrane prace",
     headingA: "Wybrane prace",
     headingB: "i przykłady procesów.",
     headingHighlight: "procesów",
-    subheading:
-      "Rzeczywisty projekt klienta i konkretne przykłady procesów wokół stron, pozyskiwania leadów, follow-upu i przygotowania dokumentów.",
+    subheading: "",
   },
   about: {
     eyebrow: "/ Sekcja 03 — O mnie",
@@ -186,10 +198,22 @@ const pl = {
     currentlyLabel: "Obecnie",
     currentlyValue: "Przyjmuję projekty",
     principles: [
-      { t: "Najpierw klarowność, potem kod.", d: "Discovery, zakres i jasna definicja sukcesu zawsze przed pikselami i pipeline’ami." },
-      { t: "Systemy, nie ekrany.", d: "Każdy interfejs to część procesu — rezerwacja, follow-up, przekazanie dokumentu. Proces jest produktem." },
-      { t: "Lekko i utrzymywalnie.", d: "Lekki stack, treści gotowe pod CMS i automatyzacje, którymi zespół faktycznie zaopiekuje się po starcie." },
-      { t: "Partnerstwo tam, gdzie ma sens.", d: "Przy bardziej złożonych wdrożeniach współpracuję ze sprawdzonymi deweloperami i specjalistami od automatyzacji." },
+      {
+        t: "Najpierw klarowność, potem kod.",
+        d: "Zaczynam od zdefiniowania prawdziwego zadania: dla kogo jest system, jakie działanie jest najważniejsze i co ma stać się łatwiejsze dla biznesu.",
+      },
+      {
+        t: "Jasne kolejne kroki.",
+        d: "Każda strona, formularz lub proces powinien sprawiać, że kolejne działanie jest oczywiste dla klienta i łatwiejsze do obsługi przez zespół.",
+      },
+      {
+        t: "Szybko na tyle, by miało to znaczenie.",
+        d: "Pracuję w skupionych iteracjach: definiuję pierwszą użyteczną wersję, buduję ją szybko i ulepszam na podstawie realnego feedbacku, zamiast ciągnąć projekt przez nieskończone planowanie.",
+      },
+      {
+        t: "Partnerstwo tam, gdzie ma sens.",
+        d: "Przy bardziej złożonych wdrożeniach współpracuję ze sprawdzonymi partnerami technicznymi, dbając o jasność discovery, zakresu, QA i komunikacji.",
+      },
     ],
   },
   contact: {
@@ -198,9 +222,10 @@ const pl = {
     headingHighlight: "zadanie cyfrowe,",
     headingB: "które utknęło?",
     subheading:
-      "Napisz, co chcesz usprawnić — stronę, ścieżkę rezerwacji, proces pozyskiwania leadów, follow-up lub obieg dokumentów. Odpowiem w ciągu 1–2 dni roboczych.",
+      "Napisz, co chcesz usprawnić — stronę, ścieżkę rezerwacji, proces pozyskiwania leadów, follow-up lub obieg dokumentów.",
     emailLabel: "E-mail",
     linkedinLabel: "LinkedIn",
+    telegramLabel: "Telegram",
     locationLabel: "Lokalizacja",
     locationValue: "Warszawa, Polska",
     form: {
@@ -215,7 +240,6 @@ const pl = {
         "Co chcesz usprawnić? Napisz o zadaniu, odbiorcach i ramach czasowych.",
       required: "Wymagane",
       invalidEmail: "Niepoprawny e-mail",
-      replies: "Odpowiadam w ciągu 1–2 dni roboczych",
       submit: "Wyślij wiadomość",
       submitting: "Wysyłanie…",
       toastSuccess: "Wiadomość wysłana. Odezwę się wkrótce.",
@@ -229,8 +253,8 @@ const pl = {
     contactLabel: "Kontakt",
     socialLabel: "Social",
     linkedin: "LinkedIn ↗",
+    telegram: "Telegram ↗",
     rights: "Wszelkie prawa zastrzeżone",
-    designedIn: "Zaprojektowane i zbudowane w Warszawie, Polska",
   },
   caseStudies: [
     {
@@ -238,12 +262,12 @@ const pl = {
       slug: "premium-service-website",
       image: sharedImages.cs1,
       title: "Strona i ścieżka rezerwacji dla usług premium",
-      client: "Koncepcja biznesu usługowego",
+      client: "Strona dla biznesu usługowego",
       role: "Projekt strony · Front-end · Ścieżka rezerwacji · Struktura pod CMS",
       summary:
-        "Koncepcja premium dla biznesu usługowego z wysokim koszykiem — zaprojektowana, by zamieniać zainteresowanie odwiedzającego w jasne zapytania i rezerwacje.",
+        "Premium strona dla biznesu usługowego z wysokim koszykiem — zaprojektowana, by zamieniać zainteresowanie odwiedzającego w jasne zapytania i rezerwacje.",
       detail:
-        "Projekt obejmuje spójny kierunek wizualny, układ mobile-first, prezentację usług, sekcje budujące zaufanie, jasne CTA i strukturę treści przygotowaną pod CMS.",
+        "Zawiera spójny kierunek wizualny, układ mobile-first, prezentację usług, sekcje budujące zaufanie, jasne CTA i strukturę treści przygotowaną pod CMS.",
       tags: ["Projekt strony", "Front-end", "Ścieżka rezerwacji", "Usługi premium", "CMS-ready", "Mobile-first"],
     },
     {
@@ -251,7 +275,7 @@ const pl = {
       slug: "lead-capture-workflow",
       image: sharedImages.cs2,
       title: "Proces pozyskiwania i obsługi leadów",
-      client: "Prototyp dla firm usługowych",
+      client: "Proces dla biznesu usługowego",
       role: "Automatyzacja procesu · Routing leadów · Logika follow-upu",
       summary:
         "Lekki proces dla firm usługowych otrzymujących zapytania z formularzy, telefonów lub wiadomości.",
@@ -264,7 +288,7 @@ const pl = {
       slug: "offer-from-brief-workflow",
       image: sharedImages.cs3,
       title: "Proces „oferta z briefu”",
-      client: "Prototyp dla B2B i firm usługowych",
+      client: "Proces B2B i biznesu usługowego",
       role: "Workflow dokumentów · Wsparcie sprzedaży · Automatyzacja follow-upu",
       summary:
         "Proces, który zamienia brief klienta, notatki z rozmowy lub podsumowanie czatu w strukturalne wymagania, draft oferty, draft maila i zadanie follow-up.",
@@ -279,7 +303,7 @@ const pl = {
 
 const ru = {
   meta: { htmlLang: "ru" },
-  nav: { work: "Работы", about: "Обо мне", contact: "Контакт", linkedin: "LinkedIn" },
+  nav: { work: "Работы", about: "Обо мне", contact: "Контакт", linkedin: "LinkedIn", telegram: "Telegram" },
   hero: {
     metaLocation: "Базируюсь в Варшаве, Польша",
     metaAvailable: "Открыт к новым проектам",
@@ -301,14 +325,14 @@ const ru = {
       "Discovery, скоуп и QA",
     ],
     marquee: ["СИСТЕМЫ", "ПРОЦЕССЫ", "АВТОМАТИЗАЦИЯ", "САЙТЫ", "ЛИДЫ", "БРОНИРОВАНИЯ", "FOLLOW-UP", "ОФФЕРЫ"],
+    portraitCaption: "Ihnat Zinkevich · Варшава",
   },
   work: {
     eyebrow: "/ Раздел 02 — Избранные работы",
     headingA: "Избранные работы",
     headingB: "и примеры процессов.",
     headingHighlight: "процессов",
-    subheading:
-      "Реальный проект клиента и сфокусированные примеры процессов вокруг сайтов, захвата лидов, follow-up и подготовки документов.",
+    subheading: "",
   },
   about: {
     eyebrow: "/ Раздел 03 — Обо мне",
@@ -319,10 +343,22 @@ const ru = {
     currentlyLabel: "Сейчас",
     currentlyValue: "Принимаю проекты",
     principles: [
-      { t: "Сначала ясность, потом код.", d: "Discovery, скоуп и чёткое определение успеха — раньше любых пикселей и pipeline." },
-      { t: "Системы, не экраны.", d: "Каждый интерфейс — часть процесса: бронирование, follow-up, передача документов. Процесс и есть продукт." },
-      { t: "Легко и поддерживаемо.", d: "Лёгкий стек, контент под CMS и автоматизации, которые команда реально может вести после запуска." },
-      { t: "Партнёрство там, где это нужно.", d: "Для более сложных задач сотрудничаю с проверенными разработчиками и специалистами по автоматизации." },
+      {
+        t: "Сначала ясность, потом код.",
+        d: "Начинаю с определения настоящей задачи: для кого эта система, какое действие важно и что должно стать проще для бизнеса.",
+      },
+      {
+        t: "Понятные следующие шаги.",
+        d: "Каждая страница, форма или процесс должны делать следующее действие очевидным для клиента и удобным для команды.",
+      },
+      {
+        t: "Достаточно быстро, чтобы это имело значение.",
+        d: "Работаю короткими итерациями: определяю первую полезную версию, быстро её собираю и улучшаю на основе реальной обратной связи, а не тяну проект через бесконечное планирование.",
+      },
+      {
+        t: "Партнёрство там, где это нужно.",
+        d: "Для более сложных задач работаю с проверенными техническими партнёрами, сохраняя ясность discovery, скоупа, QA и коммуникации.",
+      },
     ],
   },
   contact: {
@@ -331,9 +367,10 @@ const ru = {
     headingHighlight: "цифровая задача,",
     headingB: "которая застряла?",
     subheading:
-      "Расскажите, что хотите улучшить — сайт, путь бронирования, процесс захвата лидов, follow-up или работу с документами. Отвечу в течение 1–2 рабочих дней.",
+      "Расскажите, что хотите улучшить — сайт, путь бронирования, процесс захвата лидов, follow-up или работу с документами.",
     emailLabel: "E-mail",
     linkedinLabel: "LinkedIn",
+    telegramLabel: "Telegram",
     locationLabel: "Локация",
     locationValue: "Варшава, Польша",
     form: {
@@ -348,7 +385,6 @@ const ru = {
         "Что хотите улучшить? Расскажите о задаче, аудитории и сроках.",
       required: "Обязательно",
       invalidEmail: "Неверный e-mail",
-      replies: "Отвечаю в течение 1–2 рабочих дней",
       submit: "Отправить сообщение",
       submitting: "Отправляю…",
       toastSuccess: "Сообщение отправлено. Скоро вернусь с ответом.",
@@ -362,8 +398,8 @@ const ru = {
     contactLabel: "Контакт",
     socialLabel: "Соцсети",
     linkedin: "LinkedIn ↗",
+    telegram: "Telegram ↗",
     rights: "Все права защищены",
-    designedIn: "Спроектировано и собрано в Варшаве, Польша",
   },
   caseStudies: [
     {
@@ -371,10 +407,10 @@ const ru = {
       slug: "premium-service-website",
       image: sharedImages.cs1,
       title: "Сайт и процесс бронирования для премиум-услуг",
-      client: "Концепция сервисного бизнеса",
+      client: "Сайт для сервисного бизнеса",
       role: "Дизайн сайта · Front-end · Процесс бронирования · Структура под CMS",
       summary:
-        "Премиальная концепция сайта для сервисного бизнеса с высоким чеком — превращает интерес посетителя в чёткие заявки и бронирования.",
+        "Премиум-сайт для сервисного бизнеса с высоким чеком — превращает интерес посетителя в чёткие заявки и бронирования.",
       detail:
         "Включает визуальное направление, mobile-first вёрстку, презентацию услуг, секции доверия, чёткие CTA и структуру контента, готовую под CMS.",
       tags: ["Дизайн сайта", "Front-end", "Бронирование", "Премиум-услуги", "CMS-ready", "Mobile-first"],
@@ -384,7 +420,7 @@ const ru = {
       slug: "lead-capture-workflow",
       image: sharedImages.cs2,
       title: "Процесс захвата и обработки лидов",
-      client: "Прототип для сервисного бизнеса",
+      client: "Процесс для сервисного бизнеса",
       role: "Автоматизация процесса · Маршрутизация лидов · Логика follow-up",
       summary:
         "Лёгкий процесс для сервисных компаний, получающих заявки из форм, звонков или сообщений.",
@@ -397,7 +433,7 @@ const ru = {
       slug: "offer-from-brief-workflow",
       image: sharedImages.cs3,
       title: "Процесс «оффер из брифа»",
-      client: "Прототип для B2B и сервисного бизнеса",
+      client: "Процесс для B2B и сервисного бизнеса",
       role: "Документооборот · Поддержка продаж · Автоматизация follow-up",
       summary:
         "Процесс превращает бриф клиента, заметки со звонка или резюме чата в структурированные требования, черновик оффера, черновик письма и задачу follow-up.",

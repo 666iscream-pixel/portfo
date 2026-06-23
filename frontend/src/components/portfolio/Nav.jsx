@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useT } from "../../i18n/I18nContext";
 import { LangSwitcher } from "./LangSwitcher";
+import { profile } from "../../data/portfolio";
 
 export const Nav = () => {
   const t = useT();
@@ -15,6 +16,9 @@ export const Nav = () => {
 
   const linkBase =
     "font-mono-tech text-xs uppercase tracking-[0.18em] text-[#0F0F0F] hover:text-[#FF3E1A] transition-colors duration-200";
+
+  const socialBtnBase =
+    "inline-flex items-center gap-1.5 border border-ink bg-[#0F0F0F] px-3 py-2 font-mono-tech text-[10px] uppercase tracking-[0.18em] text-[#F4F4F0] transition-transform hover:-translate-y-[2px] hover:bg-[#FF3E1A]";
 
   return (
     <header
@@ -38,7 +42,7 @@ export const Nav = () => {
           </span>
         </a>
 
-        <nav className="flex items-center gap-4 sm:gap-8">
+        <nav className="flex items-center gap-4 sm:gap-6">
           <a href="#work" data-testid="nav-work-link" className={linkBase}>
             {t.nav.work}
           </a>
@@ -49,20 +53,55 @@ export const Nav = () => {
             {t.nav.contact}
           </a>
           <LangSwitcher className="hidden sm:inline-flex" />
-          <a
-            href="https://www.linkedin.com/in/ihnat-zinkevich/"
-            target="_blank"
-            rel="noreferrer noopener"
-            data-testid="nav-linkedin-link"
-            className="hidden border border-ink bg-[#0F0F0F] px-3 py-2 font-mono-tech text-xs uppercase tracking-[0.18em] text-[#F4F4F0] transition-transform hover:-translate-y-[2px] hover:bg-[#FF3E1A] md:inline-block"
-          >
-            {t.nav.linkedin} ↗
-          </a>
+          <div className="hidden items-center gap-2 md:flex">
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noreferrer noopener"
+              data-testid="nav-linkedin-link"
+              className={socialBtnBase}
+              aria-label="LinkedIn"
+            >
+              {t.nav.linkedin} ↗
+            </a>
+            <a
+              href={profile.telegram}
+              target="_blank"
+              rel="noreferrer noopener"
+              data-testid="nav-telegram-link"
+              className={socialBtnBase}
+              aria-label="Telegram"
+            >
+              {t.nav.telegram} ↗
+            </a>
+          </div>
         </nav>
       </div>
-      {/* Mobile lang switcher row */}
-      <div className="flex justify-end border-t border-ink/15 px-5 py-2 sm:hidden">
+      {/* Mobile row: lang switcher + social buttons */}
+      <div className="flex items-center justify-between gap-3 border-t border-ink/15 px-5 py-2 md:hidden">
         <LangSwitcher />
+        <div className="flex items-center gap-2">
+          <a
+            href={profile.linkedin}
+            target="_blank"
+            rel="noreferrer noopener"
+            data-testid="nav-linkedin-link-mobile"
+            className={socialBtnBase}
+            aria-label="LinkedIn"
+          >
+            LI ↗
+          </a>
+          <a
+            href={profile.telegram}
+            target="_blank"
+            rel="noreferrer noopener"
+            data-testid="nav-telegram-link-mobile"
+            className={socialBtnBase}
+            aria-label="Telegram"
+          >
+            TG ↗
+          </a>
+        </div>
       </div>
     </header>
   );

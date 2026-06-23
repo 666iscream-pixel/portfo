@@ -1,10 +1,33 @@
 import { useT } from "../../i18n/I18nContext";
+import { profile } from "../../data/portfolio";
+
+const PortraitCard = ({ caption, className = "" }) => (
+  <figure
+    data-testid="hero-portrait"
+    className={`group relative border border-ink bg-[#FFFFFF] p-2 hard-shadow-sm ${className}`}
+  >
+    <div className="relative overflow-hidden border border-ink bg-[#EAEAEA]">
+      <img
+        src={profile.photo}
+        alt={profile.name}
+        loading="eager"
+        className="aspect-[4/5] w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-[1.03]"
+      />
+      <span className="pointer-events-none absolute left-0 top-0 border-b border-r border-ink bg-[#0F0F0F] px-2.5 py-1 font-mono-tech text-[9px] uppercase tracking-[0.22em] text-[#F4F4F0]">
+        {profile.role}
+      </span>
+    </div>
+    <figcaption className="mt-2 flex items-center justify-between gap-2 px-1 font-mono-tech text-[10px] uppercase tracking-[0.18em] text-[#0F0F0F]">
+      <span>{caption}</span>
+      <span className="text-[#FF3E1A]">●</span>
+    </figcaption>
+  </figure>
+);
 
 export const Hero = () => {
   const t = useT();
   const items = t.hero.marquee;
 
-  // Replace the highlighted phrase with an accent-colored span inside the headline.
   const renderHeadlineC = () => {
     const { headlineC, headlineHighlight } = t.hero;
     if (!headlineHighlight || !headlineC.includes(headlineHighlight)) {
@@ -41,9 +64,14 @@ export const Hero = () => {
           </span>
         </div>
 
-        {/* Headline */}
-        <div className="grid grid-cols-12 gap-x-6 pt-10 sm:pt-16">
-          <div className="reveal col-span-12 lg:col-span-10">
+        {/* Headline + portrait */}
+        <div className="grid grid-cols-12 gap-x-6 gap-y-10 pt-10 sm:pt-16">
+          {/* Mobile portrait (small, top) */}
+          <div className="reveal col-span-12 lg:hidden">
+            <PortraitCard caption={t.hero.portraitCaption} className="mx-auto w-44 sm:w-52" />
+          </div>
+
+          <div className="reveal col-span-12 lg:col-span-9">
             <p
               data-testid="hero-eyebrow"
               className="mb-6 inline-block border border-ink bg-[#F4F4F0] px-3 py-1 font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#0F0F0F] sm:text-xs"
@@ -53,7 +81,7 @@ export const Hero = () => {
             </p>
             <h1
               data-testid="hero-headline"
-              className="font-display text-[40px] font-black uppercase leading-[0.95] tracking-tighter text-[#0F0F0F] sm:text-6xl lg:text-[92px]"
+              className="font-display text-[40px] font-black uppercase leading-[0.95] tracking-tighter text-[#0F0F0F] sm:text-6xl lg:text-[88px]"
             >
               {t.hero.headlineA}
               <br />
@@ -63,7 +91,12 @@ export const Hero = () => {
             </h1>
           </div>
 
-          <div className="col-span-12 mt-8 grid grid-cols-12 gap-x-6 gap-y-10 lg:col-span-12 lg:mt-14">
+          {/* Desktop portrait (right column) */}
+          <div className="reveal hidden lg:col-span-3 lg:block">
+            <PortraitCard caption={t.hero.portraitCaption} className="w-full max-w-[260px] ml-auto" />
+          </div>
+
+          <div className="col-span-12 mt-6 grid grid-cols-12 gap-x-6 gap-y-10 lg:mt-4">
             <div className="reveal col-span-12 sm:col-span-7 lg:col-span-6 lg:col-start-7">
               <p className="font-display text-base font-medium leading-relaxed text-[#0F0F0F] sm:text-lg">
                 {t.hero.bio}

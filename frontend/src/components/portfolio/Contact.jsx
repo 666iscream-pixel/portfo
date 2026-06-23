@@ -114,6 +114,20 @@ export const Contact = () => {
               </div>
               <div>
                 <p className="font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#555555]">
+                  {t.contact.telegramLabel}
+                </p>
+                <a
+                  href={profile.telegram}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  data-testid="contact-telegram-link"
+                  className="font-display text-lg font-bold text-[#0F0F0F] underline decoration-[#FF3E1A] decoration-2 underline-offset-4 hover:text-[#FF3E1A]"
+                >
+                  {profile.telegramHandle} ↗
+                </a>
+              </div>
+              <div>
+                <p className="font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#555555]">
                   {t.contact.locationLabel}
                 </p>
                 <p className="font-display text-lg font-bold text-[#0F0F0F]">
@@ -198,10 +212,7 @@ export const Contact = () => {
               </div>
             </div>
 
-            <div className="mt-8 flex flex-col items-start gap-4 border-t border-ink/30 pt-6 sm:flex-row sm:items-center sm:justify-between">
-              <p className="font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#555555]">
-                {t.contact.form.replies}
-              </p>
+            <div className="mt-8 flex justify-end border-t border-ink/30 pt-6">
               <button
                 type="submit"
                 data-testid="contact-submit-button"
