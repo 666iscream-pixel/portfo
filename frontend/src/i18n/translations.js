@@ -7,7 +7,9 @@ export const LANGS = [
 
 const sharedImages = {
   cs1: "/case-mickiewicz.jpg",
-  cs2: "https://images.pexels.com/photos/7820321/pexels-photo-7820321.jpeg",
+  crwd: "/case-crwd-home.webp",
+  crwdFull: "/case-crwd-full.webp",
+  realEstate: "/case-real-estate.webp",
   cs3: "https://images.unsplash.com/photo-1709626011485-6fe000ea2dbc",
   cs4: "https://images.pexels.com/photos/19650853/pexels-photo-19650853.jpeg",
 };
@@ -142,7 +144,8 @@ const en = {
     {
       index: "02",
       slug: "crwd-website",
-      image: sharedImages.cs2,
+      image: sharedImages.crwd,
+      gallery: [sharedImages.crwd, sharedImages.crwdFull],
       title: "CRWD Website",
       client: "Consumer group activation platform",
       role: "Website design · Front-end build · Landing page · Interaction-ready UI",
@@ -155,7 +158,7 @@ const en = {
     {
       index: "03",
       slug: "modern-real-estate-website",
-      image: sharedImages.cs2,
+      image: sharedImages.realEstate,
       title: "Modern Real Estate Website Design",
       client: "Real estate website concept",
       role: "Web design · Property browsing UX · Search flow · Trust sections",
@@ -318,7 +321,8 @@ const pl = {
     {
       index: "02",
       slug: "crwd-website",
-      image: sharedImages.cs2,
+      image: sharedImages.crwd,
+      gallery: [sharedImages.crwd, sharedImages.crwdFull],
       title: "Strona CRWD",
       client: "Platforma consumer group activation",
       role: "Projekt strony · Front-end · Landing page · UI gotowe pod interakcje",
@@ -331,7 +335,7 @@ const pl = {
     {
       index: "03",
       slug: "modern-real-estate-website",
-      image: sharedImages.cs2,
+      image: sharedImages.realEstate,
       title: "Nowoczesny projekt strony nieruchomości",
       client: "Koncepcja strony real estate",
       role: "Projekt strony · UX przeglądania ofert · Wyszukiwarka · Sekcje zaufania",
@@ -491,7 +495,8 @@ const ru = {
     {
       index: "02",
       slug: "crwd-website",
-      image: sharedImages.cs2,
+      image: sharedImages.crwd,
+      gallery: [sharedImages.crwd, sharedImages.crwdFull],
       title: "CRWD Website",
       client: "Платформа для group activations",
       role: "Дизайн сайта · Front-end · Landing page · UI под интерактив",
@@ -504,7 +509,7 @@ const ru = {
     {
       index: "03",
       slug: "modern-real-estate-website",
-      image: sharedImages.cs2,
+      image: sharedImages.realEstate,
       title: "Современный сайт для недвижимости",
       client: "Концепт сайта real estate",
       role: "Дизайн сайта · UX просмотра объектов · Поиск · Блоки доверия",
