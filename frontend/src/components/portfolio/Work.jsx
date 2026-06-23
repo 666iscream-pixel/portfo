@@ -53,6 +53,9 @@ export const Work = () => {
               caseStudy={cs}
               caseLabel={t.caseLabel}
               visitLiveLabel={t.work.visitLive}
+              prevLabel={t.work.prevSlide}
+              nextLabel={t.work.nextSlide}
+              slideOfLabel={t.work.slideOf}
               reverse={idx % 2 === 1}
             />
           ))}

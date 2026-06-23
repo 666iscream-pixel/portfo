@@ -12,6 +12,14 @@ const sharedImages = {
   cs4: "https://images.pexels.com/photos/19650853/pexels-photo-19650853.jpeg",
 };
 
+const mickiewiczGallery = [
+  "/case-mickiewicz.jpg",
+  "/case-mickiewicz-02.jpg",
+  "/case-mickiewicz-03.jpg",
+  "https://customer-assets.emergentagent.com/job_pro-portfolio-363/artifacts/za2d405a_ssstt.png",
+  "https://customer-assets.emergentagent.com/job_pro-portfolio-363/artifacts/ga4fitqh_SSSS.png",
+];
+
 const en = {
   meta: { htmlLang: "en" },
   nav: { work: "Work", about: "About", contact: "Contact", linkedin: "LinkedIn", telegram: "Telegram" },
@@ -46,6 +54,9 @@ const en = {
     subheading:
       "A mix of client work and focused examples around websites, lead handling, document workflows and process automation.",
     visitLive: "Visit live site",
+    prevSlide: "Previous slide",
+    nextSlide: "Next slide",
+    slideOf: "of",
   },
   about: {
     eyebrow: "/ Section 03 — About",
@@ -118,6 +129,7 @@ const en = {
       index: "01",
       slug: "mickiewicz-dental-clinic",
       image: sharedImages.cs1,
+      gallery: mickiewiczGallery,
       liveUrl: "https://www.mickiewiczdental.pl/",
       title: "Premium Healthcare Website & CMS",
       client: "Mickiewicz Dental Clinic — Warsaw",
@@ -206,6 +218,9 @@ const pl = {
     subheading:
       "Połączenie prac klienckich i skupionych przykładów wokół stron, obsługi leadów, obiegów dokumentów i automatyzacji procesów.",
     visitLive: "Zobacz live",
+    prevSlide: "Poprzedni slajd",
+    nextSlide: "Następny slajd",
+    slideOf: "z",
   },
   about: {
     eyebrow: "/ Sekcja 03 — O mnie",
@@ -278,6 +293,7 @@ const pl = {
       index: "01",
       slug: "mickiewicz-dental-clinic",
       image: sharedImages.cs1,
+      gallery: mickiewiczGallery,
       liveUrl: "https://www.mickiewiczdental.pl/",
       title: "Premium-strona kliniki stomatologicznej + CMS",
       client: "Mickiewicz Dental Clinic — Warszawa",
@@ -438,6 +454,7 @@ const ru = {
       index: "01",
       slug: "mickiewicz-dental-clinic",
       image: sharedImages.cs1,
+      gallery: mickiewiczGallery,
       liveUrl: "https://www.mickiewiczdental.pl/",
       title: "Премиум-сайт стоматологической клиники + CMS",
       client: "Mickiewicz Dental Clinic — Варшава",
