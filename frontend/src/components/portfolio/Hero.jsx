@@ -51,13 +51,10 @@ export const Hero = () => {
         {/* Meta row */}
         <div className="flex flex-col gap-3 border-b border-ink/30 pb-6 font-mono-tech text-xs uppercase tracking-[0.18em] text-[#555555] sm:flex-row sm:items-center sm:justify-between sm:pb-8">
           <span data-testid="hero-meta-location">
-            <span className="text-[#0F0F0F]">[01]</span> &nbsp;{t.hero.metaLocation}
+            {t.hero.metaLocation}
           </span>
           <span className="hidden sm:inline">
-            <span className="text-[#0F0F0F]">[02]</span> &nbsp;{t.hero.metaAvailable}
-          </span>
-          <span>
-            <span className="text-[#0F0F0F]">[03]</span> &nbsp;{new Date().getFullYear()} / {t.hero.metaPortfolio}
+            {t.hero.metaAvailable}
           </span>
         </div>
 

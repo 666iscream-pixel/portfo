@@ -51,8 +51,6 @@ export const Work = () => {
             <CaseStudyCard
               key={cs.slug}
               caseStudy={cs}
-              caseLabel={t.caseLabel}
-              visitLiveLabel={t.work.visitLive}
               prevLabel={t.work.prevSlide}
               nextLabel={t.work.nextSlide}
               slideOfLabel={t.work.slideOf}
