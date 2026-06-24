@@ -57,9 +57,9 @@ const en = {
     ctaContact: "Start a project",
     whatIDo: "What I do",
     capabilities: [
-      "Web design & development",
+      "Design & development",
       "Inquiries & client follow-up",
-      "Business process automation",
+      "Business process automation & optimization",
       "Planning, QA & delivery",
     ],
     marquee: ["DESIGN", "DEVELOPMENT", "AUTOMATION", "INQUIRIES", "FORMS", "FOLLOW-UP", "CLIENT PROCESSES", "QA", "DELIVERY"],
@@ -70,8 +70,7 @@ const en = {
     headingA: "Selected work and",
     headingB: "solution examples.",
     headingHighlight: "solution",
-    subheading:
-      "A mix of client work and focused examples around websites, lead handling, document workflows and process automation.",
+    subheading: "",
     visitLive: "Visit live site",
     prevSlide: "Previous slide",
     nextSlide: "Next slide",
@@ -98,7 +97,7 @@ const en = {
       },
       {
         t: "Personal responsibility.",
-        d: "You work directly with me — the person responsible for quality, timing and the code itself. If a task needs specific expertise, I bring in and coordinate trusted specialists without pushing that coordination onto you.",
+        d: "You work directly with me — the person responsible for quality, timing and the code itself.",
       },
     ],
   },
@@ -232,9 +231,9 @@ const pl = {
     ctaContact: "Rozpocznij projekt",
     whatIDo: "Co robię",
     capabilities: [
-      "Projektowanie i development www",
+      "Projektowanie i development",
       "Zapytania i obsługa klientów",
-      "Automatyzacja procesów biznesowych",
+      "Automatyzacja i optymalizacja procesów biznesowych",
       "Plan, testy i wdrożenie",
     ],
     marquee: ["PROJEKTOWANIE", "DEVELOPMENT", "AUTOMATYZACJA", "ZAPYTANIA", "FORMULARZE", "OBSŁUGA KLIENTA", "PROCESY", "TESTY", "WDROŻENIE"],
@@ -245,8 +244,7 @@ const pl = {
     headingA: "Wybrane prace i",
     headingB: "przykłady rozwiązań.",
     headingHighlight: "rozwiązań",
-    subheading:
-      "Połączenie prac klienckich i skupionych przykładów wokół stron, obsługi leadów, obiegów dokumentów i automatyzacji procesów.",
+    subheading: "",
     visitLive: "Zobacz live",
     prevSlide: "Poprzedni slajd",
     nextSlide: "Następny slajd",
@@ -273,7 +271,7 @@ const pl = {
       },
       {
         t: "Osobista odpowiedzialność.",
-        d: "Rozmawiasz bezpośrednio ze mną — osobą odpowiedzialną za jakość, terminy i sam kod. Jeśli zadanie wymaga specjalistycznych kompetencji, sam dobiorę i skoordynuję sprawdzonych specjalistów.",
+        d: "Rozmawiasz bezpośrednio ze mną — osobą odpowiedzialną za jakość, terminy i sam kod.",
       },
     ],
   },
@@ -407,9 +405,9 @@ const ru = {
     ctaContact: "Начать проект",
     whatIDo: "Что я делаю",
     capabilities: [
-      "Дизайн и разработка сайтов",
+      "Дизайн и разработка",
       "Заявки и обработка клиентов",
-      "Автоматизация бизнес-процессов",
+      "Автоматизация и оптимизация бизнес-процессов",
       "План работ, проверка и запуск",
     ],
     marquee: ["ДИЗАЙН", "РАЗРАБОТКА", "АВТОМАТИЗАЦИЯ", "ЗАЯВКИ", "ФОРМЫ", "ОБРАБОТКА КЛИЕНТОВ", "ПРОЦЕССЫ", "ПРОВЕРКА", "ЗАПУСК"],
@@ -420,8 +418,7 @@ const ru = {
     headingA: "Избранные работы и",
     headingB: "примеры решений.",
     headingHighlight: "решений",
-    subheading:
-      "Сочетание клиентских работ и сфокусированных примеров вокруг сайтов, работы с лидами, документооборота и автоматизации процессов.",
+    subheading: "",
     visitLive: "Открыть сайт",
   },
   about: {
@@ -445,7 +442,7 @@ const ru = {
       },
       {
         t: "Личная ответственность.",
-        d: "Вы общаетесь напрямую со мной — человеком, который отвечает за качество, сроки и сам пишет код. Если задача требует специфических навыков, я сам подключу и проконтролирую проверенных специалистов, не нагружая вас координацией.",
+        d: "Вы общаетесь напрямую со мной — человеком, который отвечает за качество, сроки и сам пишет код.",
       },
     ],
   },
