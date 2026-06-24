@@ -8,15 +8,25 @@ export const Footer = () => {
       <div className="mx-auto max-w-[1480px] px-5 py-12 sm:px-8 sm:py-16">
         <div className="grid grid-cols-12 gap-x-6 gap-y-10">
           <div className="col-span-12 lg:col-span-7">
-            <p className="font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#F4F4F0]/60">
-              {t.footer.eyebrow}
-            </p>
-            <h3 className="mt-4 font-display text-3xl font-black uppercase leading-[0.98] tracking-tight sm:text-5xl">
+            {t.footer.eyebrow ? (
+              <p className="font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#F4F4F0]/60">
+                {t.footer.eyebrow}
+              </p>
+            ) : null}
+            <h3
+              className={`font-display text-3xl font-black uppercase leading-[0.98] tracking-tight sm:text-5xl ${
+                t.footer.eyebrow ? "mt-4" : ""
+              }`}
+            >
               {t.footer.lineA}
               <br />
               {t.footer.lineB}
-              <br />
-              <span className="text-[#FF3E1A]">{t.footer.lineC}</span>
+              {t.footer.lineC ? (
+                <>
+                  <br />
+                  <span className="text-[#FF3E1A]">{t.footer.lineC}</span>
+                </>
+              ) : null}
             </h3>
           </div>
 

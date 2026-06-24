@@ -84,8 +84,12 @@ export const Hero = () => {
                   {t.hero.headlineB}
                 </>
               ) : null}
-              <br />
-              {renderHeadlineC()}
+              {t.hero.headlineC ? (
+                <>
+                  <br />
+                  {renderHeadlineC()}
+                </>
+              ) : null}
             </h1>
           </div>
 
