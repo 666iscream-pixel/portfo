@@ -6,7 +6,11 @@ export const LANGS = [
 ];
 
 const sharedImages = {
-  cs1: "/case-mickiewicz.jpg",
+  cs1: "/case-mickiewicz-hero.png",
+  mickiewiczMetamorfozy: "/case-mickiewicz-metamorfozy.png",
+  mickiewiczStrapi: "/case-mickiewicz-strapi.png",
+  mickiewiczMobile: "/case-mickiewicz-mobile.png",
+  mickiewiczServices: "/case-mickiewicz-03.jpg",
   crwd: "/case-crwd-home.webp",
   crwdFull: "/case-crwd-full.webp",
   realEstate: "/case-real-estate.webp",
@@ -15,11 +19,11 @@ const sharedImages = {
 };
 
 const mickiewiczGallery = [
-  "/case-mickiewicz.jpg",
-  "/case-mickiewicz-02.jpg",
-  "/case-mickiewicz-03.jpg",
-  "https://customer-assets.emergentagent.com/job_pro-portfolio-363/artifacts/za2d405a_ssstt.png",
-  "https://customer-assets.emergentagent.com/job_pro-portfolio-363/artifacts/ga4fitqh_SSSS.png",
+  { src: sharedImages.cs1, fit: "cover", position: "center" },
+  { src: sharedImages.mickiewiczMetamorfozy, fit: "cover", position: "center" },
+  { src: sharedImages.mickiewiczStrapi, fit: "cover", position: "center" },
+  { src: sharedImages.mickiewiczMobile, fit: "cover", position: "center top" },
+  { src: sharedImages.mickiewiczServices, fit: "cover", position: "center" },
 ];
 
 const crwdGallery = [
