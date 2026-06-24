@@ -7,9 +7,11 @@ export const LANGS = [
 
 const sharedImages = {
   cs1: "/case-mickiewicz-hero.png",
+  mickiewiczDesktopShowcase: "/case-mickiewicz-desktop-showcase.png",
   mickiewiczMetamorfozy: "/case-mickiewicz-metamorfozy-full.png",
   mickiewiczStrapi: "/case-mickiewicz-strapi.png",
   mickiewiczMobile: "/case-mickiewicz-mobile-showcase.png",
+  mickiewiczCmsShowcase: "/case-mickiewicz-cms-showcase.png",
   mickiewiczServices: "/case-mickiewicz-03.jpg",
   crwd: "/case-crwd-home.webp",
   crwdFull: "/case-crwd-full.webp",
@@ -19,11 +21,9 @@ const sharedImages = {
 };
 
 const mickiewiczGallery = [
-  { src: sharedImages.cs1, fit: "contain", position: "center" },
-  { src: sharedImages.mickiewiczMetamorfozy, fit: "contain", position: "center" },
+  { src: sharedImages.mickiewiczDesktopShowcase, fit: "cover", position: "center" },
   { src: sharedImages.mickiewiczMobile, fit: "contain", position: "center" },
-  { src: sharedImages.mickiewiczStrapi, fit: "contain", position: "center" },
-  { src: sharedImages.mickiewiczServices, fit: "contain", position: "center" },
+  { src: sharedImages.mickiewiczCmsShowcase, fit: "cover", position: "center" },
 ];
 
 const crwdGallery = [
@@ -47,7 +47,6 @@ const en = {
   nav: { work: "Work", about: "About", contact: "Contact", linkedin: "LinkedIn", telegram: "Telegram" },
   hero: {
     metaLocation: "Based in Warsaw, Poland",
-    metaAvailable: "Available for new engagements",
     eyebrow: "Web Design · Development · Automation",
     headlineA: "Development, design, optimization.",
     headlineB: "",
@@ -85,8 +84,6 @@ const en = {
     headingHighlight: "work.",
     locationLabel: "Based in",
     location: "Warsaw, Poland",
-    currentlyLabel: "Currently",
-    currentlyValue: "Accepting projects",
     principles: [
       {
         t: "Problem first, code second.",
@@ -225,7 +222,6 @@ const pl = {
   nav: { work: "Prace", about: "O mnie", contact: "Kontakt", linkedin: "LinkedIn", telegram: "Telegram" },
   hero: {
     metaLocation: "Z siedzibą w Warszawie, Polska",
-    metaAvailable: "Dostępny do nowych projektów",
     eyebrow: "Projekt stron · Development · Automatyzacja",
     headlineA: "Development, design, optymalizacja.",
     headlineB: "",
@@ -263,8 +259,6 @@ const pl = {
     headingHighlight: "pracuję.",
     locationLabel: "Z siedzibą",
     location: "Warszawa, Polska",
-    currentlyLabel: "Obecnie",
-    currentlyValue: "Przyjmuję projekty",
     principles: [
       {
         t: "Najpierw zadanie, potem kod.",
@@ -403,7 +397,6 @@ const ru = {
   nav: { work: "Работы", about: "Обо мне", contact: "Контакт", linkedin: "LinkedIn", telegram: "Telegram" },
   hero: {
     metaLocation: "Базируюсь в Варшаве, Польша",
-    metaAvailable: "Открыт к новым проектам",
     eyebrow: "Веб-дизайн · Разработка · Автоматизация",
     headlineA: "Разработка, дизайн, оптимизация.",
     headlineB: "",
@@ -438,8 +431,6 @@ const ru = {
     headingHighlight: "работаю.",
     locationLabel: "Базируюсь",
     location: "Варшава, Польша",
-    currentlyLabel: "Сейчас",
-    currentlyValue: "Принимаю проекты",
     principles: [
       {
         t: "Сначала задача, потом код.",

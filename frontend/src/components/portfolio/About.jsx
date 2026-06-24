@@ -25,8 +25,6 @@ export const About = () => {
             <div className="mt-8 inline-flex flex-col gap-1 border border-[#F4F4F0]/30 p-4 font-mono-tech text-xs uppercase tracking-[0.18em]">
               <span className="text-[#F4F4F0]/60">{t.about.locationLabel}</span>
               <span>{t.about.location}</span>
-              <span className="mt-3 text-[#F4F4F0]/60">{t.about.currentlyLabel}</span>
-              <span className="text-[#FF3E1A]">{t.about.currentlyValue}</span>
             </div>
           </div>
 

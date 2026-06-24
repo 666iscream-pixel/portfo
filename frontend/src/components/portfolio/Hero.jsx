@@ -53,9 +53,6 @@ export const Hero = () => {
           <span data-testid="hero-meta-location">
             {t.hero.metaLocation}
           </span>
-          <span className="hidden sm:inline">
-            {t.hero.metaAvailable}
-          </span>
         </div>
 
         {/* Headline + portrait */}
