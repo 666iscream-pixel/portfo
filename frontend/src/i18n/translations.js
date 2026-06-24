@@ -22,6 +22,22 @@ const mickiewiczGallery = [
   "https://customer-assets.emergentagent.com/job_pro-portfolio-363/artifacts/ga4fitqh_SSSS.png",
 ];
 
+const crwdGallery = [
+  { src: sharedImages.crwd, fit: "cover", position: "center" },
+  { src: sharedImages.crwdFull, fit: "cover", position: "center top" },
+  { src: sharedImages.crwdFull, fit: "cover", position: "center 42%" },
+  { src: sharedImages.crwdFull, fit: "cover", position: "center 72%" },
+  { src: sharedImages.crwdFull, fit: "cover", position: "center bottom" },
+];
+
+const realEstateGallery = [
+  { src: sharedImages.realEstate, fit: "cover", position: "center top" },
+  { src: sharedImages.realEstate, fit: "cover", position: "center 28%" },
+  { src: sharedImages.realEstate, fit: "cover", position: "center 52%" },
+  { src: sharedImages.realEstate, fit: "cover", position: "center 76%" },
+  { src: sharedImages.realEstate, fit: "cover", position: "center bottom" },
+];
+
 const en = {
   meta: { htmlLang: "en" },
   nav: { work: "Work", about: "About", contact: "Contact", linkedin: "LinkedIn", telegram: "Telegram" },
@@ -145,7 +161,7 @@ const en = {
       index: "02",
       slug: "crwd-website",
       image: sharedImages.crwd,
-      gallery: [sharedImages.crwd, sharedImages.crwdFull],
+      gallery: crwdGallery,
       title: "CRWD Website",
       client: "Consumer group activation platform",
       role: "Website design · Front-end build · Landing page · Interaction-ready UI",
@@ -159,6 +175,7 @@ const en = {
       index: "03",
       slug: "modern-real-estate-website",
       image: sharedImages.realEstate,
+      gallery: realEstateGallery,
       title: "Modern Real Estate Website Design",
       client: "Real estate website concept",
       role: "Web design · Property browsing UX · Search flow · Trust sections",
@@ -322,7 +339,7 @@ const pl = {
       index: "02",
       slug: "crwd-website",
       image: sharedImages.crwd,
-      gallery: [sharedImages.crwd, sharedImages.crwdFull],
+      gallery: crwdGallery,
       title: "Strona CRWD",
       client: "Platforma consumer group activation",
       role: "Projekt strony · Front-end · Landing page · UI gotowe pod interakcje",
@@ -336,6 +353,7 @@ const pl = {
       index: "03",
       slug: "modern-real-estate-website",
       image: sharedImages.realEstate,
+      gallery: realEstateGallery,
       title: "Nowoczesny projekt strony nieruchomości",
       client: "Koncepcja strony real estate",
       role: "Projekt strony · UX przeglądania ofert · Wyszukiwarka · Sekcje zaufania",
@@ -496,7 +514,7 @@ const ru = {
       index: "02",
       slug: "crwd-website",
       image: sharedImages.crwd,
-      gallery: [sharedImages.crwd, sharedImages.crwdFull],
+      gallery: crwdGallery,
       title: "CRWD Website",
       client: "Платформа для group activations",
       role: "Дизайн сайта · Front-end · Landing page · UI под интерактив",
@@ -510,6 +528,7 @@ const ru = {
       index: "03",
       slug: "modern-real-estate-website",
       image: sharedImages.realEstate,
+      gallery: realEstateGallery,
       title: "Современный сайт для недвижимости",
       client: "Концепт сайта real estate",
       role: "Дизайн сайта · UX просмотра объектов · Поиск · Блоки доверия",

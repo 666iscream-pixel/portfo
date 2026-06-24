@@ -32,6 +32,15 @@ const ChevronRight = ({ className = "" }) => (
 
 const pad = (n) => String(n).padStart(2, "0");
 
+const getSlide = (slide) =>
+  typeof slide === "string"
+    ? { src: slide, fit: "contain", position: "center" }
+    : {
+        src: slide.src,
+        fit: slide.fit || "contain",
+        position: slide.position || "center",
+      };
+
 const MickiewiczShowcase = ({ title }) => {
   const screens = [
     "/case-mickiewicz.jpg",
@@ -89,7 +98,7 @@ export const CaseStudyCard = ({
 }) => {
   const { slug, title, client, role, summary, detail, image, tags, gallery } = caseStudy;
 
-  const slides = gallery && gallery.length > 0 ? gallery : [image];
+  const slides = (gallery && gallery.length > 0 ? gallery : [image]).map(getSlide);
   const [idx, setIdx] = useState(0);
   const goTo = (i) => setIdx(((i % slides.length) + slides.length) % slides.length);
   const next = () => goTo(idx + 1);
@@ -111,15 +120,18 @@ export const CaseStudyCard = ({
           <MickiewiczShowcase title={title} />
         ) : (
           <div className="relative aspect-[4/3] overflow-hidden border border-ink bg-[#EAEAEA]">
-            {slides.map((src, i) => (
-              <div key={src} aria-hidden={i !== idx} className="absolute inset-0">
+            {slides.map((slide, i) => (
+              <div key={`${slide.src}-${i}`} aria-hidden={i !== idx} className="absolute inset-0">
                 <img
-                  src={src}
+                  src={slide.src}
                   alt={`${title} - ${i + 1}/${slides.length}`}
                   loading={i === 0 ? "eager" : "lazy"}
-                  className={`absolute inset-0 h-full w-full object-contain object-center transition-opacity duration-500 ${
+                  className={`absolute inset-0 h-full w-full transition-opacity duration-500 ${
+                    slide.fit === "cover" ? "object-cover" : "object-contain"
+                  } ${
                     i === idx ? "opacity-100" : "opacity-0"
                   }`}
+                  style={{ objectPosition: slide.position }}
                 />
               </div>
             ))}
