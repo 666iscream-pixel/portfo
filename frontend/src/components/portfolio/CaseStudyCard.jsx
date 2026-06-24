@@ -67,7 +67,7 @@ export const CaseStudyCard = ({
           reverse ? "lg:order-2" : "lg:order-1"
         }`}
       >
-        <div className="relative min-h-[430px] overflow-hidden border border-ink bg-[#EAEAEA] sm:aspect-[4/3] sm:min-h-0 lg:aspect-[16/11]">
+        <div className="relative aspect-[4/3] overflow-hidden border border-ink bg-[#EAEAEA] lg:aspect-[16/11]">
           {slides.map((slide, i) => (
             <div key={`${slide.src}-${i}`} aria-hidden={i !== idx} className="absolute inset-0">
               <img

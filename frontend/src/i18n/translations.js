@@ -20,9 +20,9 @@ const sharedImages = {
 };
 
 const mickiewiczGallery = [
-  { src: sharedImages.mickiewiczDesktopShowcase, fit: "cover", position: "center" },
+  { src: sharedImages.mickiewiczDesktopShowcase, fit: "contain", position: "center" },
   { src: sharedImages.mickiewiczMobile, fit: "contain", position: "center" },
-  { src: sharedImages.mickiewiczStructureShowcase, fit: "cover", position: "center" },
+  { src: sharedImages.mickiewiczStructureShowcase, fit: "contain", position: "center" },
 ];
 
 const crwdGallery = [
