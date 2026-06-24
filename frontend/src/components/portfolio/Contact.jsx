@@ -4,7 +4,9 @@ import { toast } from "sonner";
 import { profile } from "../../data/portfolio";
 import { useT } from "../../i18n/I18nContext";
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const API = process.env.REACT_APP_BACKEND_URL
+  ? `${process.env.REACT_APP_BACKEND_URL}/api`
+  : "/api";
 
 const initial = { name: "", email: "", company: "", message: "" };
 
