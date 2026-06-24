@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const ChevronLeft = ({ className = "" }) => (
   <svg
@@ -52,32 +52,10 @@ export const CaseStudyCard = ({
 
   const slides = (gallery && gallery.length > 0 ? gallery : [image]).map(getSlide);
   const [idx, setIdx] = useState(0);
-  const [modalOpen, setModalOpen] = useState(false);
   const goTo = (i) => setIdx(((i % slides.length) + slides.length) % slides.length);
   const next = () => goTo(idx + 1);
   const prev = () => goTo(idx - 1);
   const hasCarousel = slides.length > 1;
-  const canOpenModal = Number.parseInt(caseStudy.index, 10) <= 3;
-  const activeSlide = slides[idx];
-
-  useEffect(() => {
-    if (!modalOpen) return undefined;
-    const onKeyDown = (event) => {
-      if (event.key === "Escape") setModalOpen(false);
-      if (event.key === "ArrowLeft" && hasCarousel) {
-        setIdx((current) => ((current - 1) % slides.length + slides.length) % slides.length);
-      }
-      if (event.key === "ArrowRight" && hasCarousel) {
-        setIdx((current) => (current + 1) % slides.length);
-      }
-    };
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", onKeyDown);
-    };
-  }, [modalOpen, hasCarousel, slides.length]);
 
   return (
     <article
@@ -85,26 +63,11 @@ export const CaseStudyCard = ({
       className="reveal group col-span-12 grid grid-cols-12 gap-x-6 gap-y-6 border border-ink bg-[#FFFFFF] p-5 transition-shadow hover:shadow-[8px_8px_0_0_#0F0F0F] sm:p-7"
     >
       <div
-        className={`col-span-12 lg:col-span-7 ${
+        className={`col-span-12 lg:col-span-8 ${
           reverse ? "lg:order-2" : "lg:order-1"
         }`}
       >
-        <div
-          className={`relative aspect-[4/3] overflow-hidden border border-ink bg-[#EAEAEA] ${
-            canOpenModal ? "cursor-zoom-in" : ""
-          }`}
-          onClick={() => canOpenModal && setModalOpen(true)}
-          role={canOpenModal ? "button" : undefined}
-          tabIndex={canOpenModal ? 0 : undefined}
-          onKeyDown={(event) => {
-            if (!canOpenModal) return;
-            if (event.key === "Enter" || event.key === " ") {
-              event.preventDefault();
-              setModalOpen(true);
-            }
-          }}
-          aria-label={canOpenModal ? `Open ${title} image preview` : undefined}
-        >
+        <div className="relative min-h-[430px] overflow-hidden border border-ink bg-[#EAEAEA] sm:aspect-[4/3] sm:min-h-0 lg:aspect-[16/11]">
           {slides.map((slide, i) => (
             <div key={`${slide.src}-${i}`} aria-hidden={i !== idx} className="absolute inset-0">
               <img
@@ -175,75 +138,8 @@ export const CaseStudyCard = ({
         </div>
       </div>
 
-      {canOpenModal && modalOpen && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0F0F0F]/90 p-4 sm:p-8"
-          role="dialog"
-          aria-modal="true"
-          aria-label={`${title} image preview`}
-          onClick={() => setModalOpen(false)}
-        >
-          <div
-            className="relative flex h-full w-full max-w-[1500px] flex-col border border-[#F4F4F0] bg-[#0F0F0F]"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className="flex items-center justify-between gap-4 border-b border-[#F4F4F0] bg-[#0F0F0F] px-4 py-3">
-              <div className="min-w-0">
-                <p className="truncate font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#F4F4F0]/60">
-                  {client}
-                </p>
-                <p className="truncate font-display text-sm font-bold text-[#F4F4F0] sm:text-base">
-                  {title}
-                </p>
-              </div>
-              <button
-                type="button"
-                onClick={() => setModalOpen(false)}
-                className="grid h-10 w-10 shrink-0 place-items-center border border-[#F4F4F0] bg-[#F4F4F0] font-mono-tech text-xs text-[#0F0F0F] transition-colors hover:bg-[#FF3E1A]"
-                aria-label="Close preview"
-              >
-                X
-              </button>
-            </div>
-
-            <div className="relative min-h-0 flex-1 bg-[#111111]">
-              <img
-                src={activeSlide.src}
-                alt={`${title} - enlarged ${idx + 1}/${slides.length}`}
-                className="h-full w-full object-contain"
-                style={{ objectPosition: activeSlide.position }}
-              />
-
-              {hasCarousel && (
-                <>
-                  <button
-                    type="button"
-                    onClick={prev}
-                    aria-label={prevLabel}
-                    className="absolute left-3 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center border border-[#F4F4F0] bg-[#F4F4F0] text-[#0F0F0F] transition-colors hover:bg-[#FF3E1A]"
-                  >
-                    <ChevronLeft className="h-5 w-5" />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={next}
-                    aria-label={nextLabel}
-                    className="absolute right-3 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center border border-[#F4F4F0] bg-[#F4F4F0] text-[#0F0F0F] transition-colors hover:bg-[#FF3E1A]"
-                  >
-                    <ChevronRight className="h-5 w-5" />
-                  </button>
-                  <span className="absolute bottom-3 left-1/2 -translate-x-1/2 border border-[#F4F4F0] bg-[#0F0F0F] px-3 py-1 font-mono-tech text-[10px] uppercase tracking-[0.22em] text-[#F4F4F0]">
-                    {pad(idx + 1)} {slideOfLabel} {pad(slides.length)}
-                  </span>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
-
       <div
-        className={`col-span-12 flex flex-col justify-between lg:col-span-5 ${
+        className={`col-span-12 flex flex-col justify-between lg:col-span-4 ${
           reverse ? "lg:order-1" : "lg:order-2"
         }`}
       >

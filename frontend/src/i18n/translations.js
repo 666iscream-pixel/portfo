@@ -9,9 +9,8 @@ const sharedImages = {
   cs1: "/case-mickiewicz-hero.png",
   mickiewiczDesktopShowcase: "/case-mickiewicz-desktop-showcase.png",
   mickiewiczMetamorfozy: "/case-mickiewicz-metamorfozy-full.png",
-  mickiewiczStrapi: "/case-mickiewicz-strapi.png",
   mickiewiczMobile: "/case-mickiewicz-mobile-showcase.png",
-  mickiewiczCmsShowcase: "/case-mickiewicz-cms-showcase.png",
+  mickiewiczStructureShowcase: "/case-mickiewicz-structure-showcase.png",
   mickiewiczServices: "/case-mickiewicz-03.jpg",
   crwd: "/case-crwd-home.webp",
   crwdFull: "/case-crwd-full.webp",
@@ -23,7 +22,7 @@ const sharedImages = {
 const mickiewiczGallery = [
   { src: sharedImages.mickiewiczDesktopShowcase, fit: "cover", position: "center" },
   { src: sharedImages.mickiewiczMobile, fit: "contain", position: "center" },
-  { src: sharedImages.mickiewiczCmsShowcase, fit: "cover", position: "center" },
+  { src: sharedImages.mickiewiczStructureShowcase, fit: "cover", position: "center" },
 ];
 
 const crwdGallery = [
@@ -149,14 +148,14 @@ const en = {
       image: sharedImages.cs1,
       gallery: mickiewiczGallery,
       liveUrl: "https://www.mickiewiczdental.pl/",
-      title: "Premium Healthcare Website & CMS",
+      title: "Premium Healthcare Website System",
       client: "Mickiewicz Dental Clinic — Warsaw",
-      role: "Design · React development · Strapi CMS · Multilingual structure",
+      role: "Design · React development · Multilingual structure · Booking UX",
       summary:
-        "A premium website for a private dental clinic in Warsaw, built from scratch with a fully editable CMS.",
+        "A premium website for a private dental clinic in Warsaw, built from scratch around trust, treatment results and appointment conversion.",
       detail:
-        "Polished visual direction, mobile-first React build, service pages, treatment-result sections, pricing, multilingual structure and a clear path to booking a consultation. The clinic team manages texts, media, services, pricing, team profiles and case sections through an admin panel.",
-      tags: ["Healthcare", "Dental Clinic", "Web Design", "React", "Strapi CMS", "Multilingual", "Mobile-first", "SEO Structure"],
+        "Polished visual direction, mobile-first React build, service pages, treatment-result sections, pricing, multilingual structure and a clear path to booking a consultation.",
+      tags: ["Healthcare", "Dental Clinic", "Web Design", "React", "Multilingual", "Mobile-first", "SEO Structure"],
     },
     {
       index: "02",
@@ -324,14 +323,14 @@ const pl = {
       image: sharedImages.cs1,
       gallery: mickiewiczGallery,
       liveUrl: "https://www.mickiewiczdental.pl/",
-      title: "Premium-strona kliniki stomatologicznej + CMS",
+      title: "Premium-strona kliniki stomatologicznej",
       client: "Mickiewicz Dental Clinic — Warszawa",
-      role: "Design · Development w React · Strapi CMS · Struktura wielojęzyczna",
+      role: "Design · Development w React · Struktura wielojęzyczna · UX rezerwacji",
       summary:
-        "Premium-strona dla prywatnej kliniki stomatologicznej w Warszawie, zbudowana od zera z w pełni edytowalnym CMS.",
+        "Premium-strona dla prywatnej kliniki stomatologicznej w Warszawie, zbudowana wokół zaufania, efektów leczenia i umawiania konsultacji.",
       detail:
-        "Spójny kierunek wizualny, mobile-first development w React, strony usług, sekcje metamorfoz, cennik, struktura wielojęzyczna i jasna ścieżka do umówienia konsultacji. Zespół kliniki zarządza tekstami, mediami, usługami, cennikiem, profilami zespołu i case’ami przez panel administracyjny.",
-      tags: ["Stomatologia", "Klinika", "Projekt strony", "React", "Strapi CMS", "Wielojęzyczność", "Mobile-first", "Struktura SEO"],
+        "Spójny kierunek wizualny, mobile-first development w React, strony usług, sekcje metamorfoz, cennik, struktura wielojęzyczna i jasna ścieżka do umówienia konsultacji.",
+      tags: ["Stomatologia", "Klinika", "Projekt strony", "React", "Wielojęzyczność", "Mobile-first", "Struktura SEO"],
     },
     {
       index: "02",
@@ -496,14 +495,14 @@ const ru = {
       image: sharedImages.cs1,
       gallery: mickiewiczGallery,
       liveUrl: "https://www.mickiewiczdental.pl/",
-      title: "Премиум-сайт стоматологической клиники + CMS",
+      title: "Премиум-сайт стоматологической клиники",
       client: "Mickiewicz Dental Clinic — Варшава",
-      role: "Дизайн · React-разработка · Strapi CMS · Мультиязычная структура",
+      role: "Дизайн · React-разработка · Мультиязычная структура · UX записи",
       summary:
-        "Премиум-сайт для частной стоматологической клиники в Варшаве, собранный с нуля с полностью редактируемой CMS.",
+        "Премиум-сайт для частной стоматологической клиники в Варшаве, собранный вокруг доверия, результатов лечения и записи на консультацию.",
       detail:
-        "Единый визуальный язык, mobile-first сборка на React, страницы услуг, секции результатов лечения, прайс, мультиязычная структура и понятный путь к записи на консультацию. Команда клиники управляет текстами, медиа, услугами, ценами, профилями специалистов и кейсами через админ-панель.",
-      tags: ["Стоматология", "Клиника", "Дизайн сайта", "React", "Strapi CMS", "Мультиязычность", "Mobile-first", "SEO-структура"],
+        "Единый визуальный язык, mobile-first сборка на React, страницы услуг, секции результатов лечения, прайс, мультиязычная структура и понятный путь к записи на консультацию.",
+      tags: ["Стоматология", "Клиника", "Дизайн сайта", "React", "Мультиязычность", "Mobile-first", "SEO-структура"],
     },
     {
       index: "02",
