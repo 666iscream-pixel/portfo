@@ -7,9 +7,9 @@ export const LANGS = [
 
 const sharedImages = {
   cs1: "/case-mickiewicz-hero.png",
-  mickiewiczMetamorfozy: "/case-mickiewicz-metamorfozy.png",
+  mickiewiczMetamorfozy: "/case-mickiewicz-metamorfozy-full.png",
   mickiewiczStrapi: "/case-mickiewicz-strapi.png",
-  mickiewiczMobile: "/case-mickiewicz-mobile.png",
+  mickiewiczMobile: "/case-mickiewicz-mobile-showcase.png",
   mickiewiczServices: "/case-mickiewicz-03.jpg",
   crwd: "/case-crwd-home.webp",
   crwdFull: "/case-crwd-full.webp",
@@ -19,11 +19,11 @@ const sharedImages = {
 };
 
 const mickiewiczGallery = [
-  { src: sharedImages.cs1, fit: "cover", position: "center" },
-  { src: sharedImages.mickiewiczMetamorfozy, fit: "cover", position: "center" },
-  { src: sharedImages.mickiewiczStrapi, fit: "cover", position: "center" },
-  { src: sharedImages.mickiewiczMobile, fit: "cover", position: "center top" },
-  { src: sharedImages.mickiewiczServices, fit: "cover", position: "center" },
+  { src: sharedImages.cs1, fit: "contain", position: "center" },
+  { src: sharedImages.mickiewiczMetamorfozy, fit: "contain", position: "center" },
+  { src: sharedImages.mickiewiczMobile, fit: "contain", position: "center" },
+  { src: sharedImages.mickiewiczStrapi, fit: "contain", position: "center" },
+  { src: sharedImages.mickiewiczServices, fit: "contain", position: "center" },
 ];
 
 const crwdGallery = [
