@@ -64,8 +64,12 @@ export const CaseStudyCard = ({
     if (!modalOpen) return undefined;
     const onKeyDown = (event) => {
       if (event.key === "Escape") setModalOpen(false);
-      if (event.key === "ArrowLeft" && hasCarousel) prev();
-      if (event.key === "ArrowRight" && hasCarousel) next();
+      if (event.key === "ArrowLeft" && hasCarousel) {
+        setIdx((current) => ((current - 1) % slides.length + slides.length) % slides.length);
+      }
+      if (event.key === "ArrowRight" && hasCarousel) {
+        setIdx((current) => (current + 1) % slides.length);
+      }
     };
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKeyDown);
@@ -73,7 +77,7 @@ export const CaseStudyCard = ({
       document.body.style.overflow = "";
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [modalOpen, hasCarousel, idx]);
+  }, [modalOpen, hasCarousel, slides.length]);
 
   return (
     <article
