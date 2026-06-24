@@ -194,7 +194,7 @@ const en = {
       slug: "lead-capture-workflow",
       image: sharedImages.cs3,
       title: "Lead Capture & Handling Automation",
-      client: "Automation for service businesses",
+      client: "Herbs and Spices",
       role: "Automation · Lead routing · Follow-up logic",
       summary:
         "For service businesses receiving inquiries from forms, calls or direct messages.",
@@ -207,7 +207,7 @@ const en = {
       slug: "offer-from-brief-workflow",
       image: sharedImages.cs4,
       title: "Offer From Brief Automation",
-      client: "Automation for B2B and service businesses",
+      client: "Flowpilot",
       role: "Documents · Sales support · Follow-up automation",
       summary:
         "Automation that turns a client brief, call notes or chat summary into structured requirements, an offer draft, an email draft and a follow-up task.",
@@ -372,7 +372,7 @@ const pl = {
       slug: "lead-capture-workflow",
       image: sharedImages.cs3,
       title: "Automatyzacja pozyskiwania i obsługi leadów",
-      client: "Automatyzacja dla firm usługowych",
+      client: "Herbs and Spices",
       role: "Automatyzacja · Routing leadów · Logika follow-upu",
       summary:
         "Dla firm usługowych otrzymujących zapytania z formularzy, telefonów lub wiadomości.",
@@ -385,7 +385,7 @@ const pl = {
       slug: "offer-from-brief-workflow",
       image: sharedImages.cs4,
       title: "Automatyzacja „oferta z briefu”",
-      client: "Automatyzacja dla B2B i firm usługowych",
+      client: "Flowpilot",
       role: "Dokumenty · Wsparcie sprzedaży · Automatyzacja follow-upu",
       summary:
         "Automatyzacja, która zamienia brief klienta, notatki z rozmowy lub podsumowanie czatu w strukturalne wymagania, draft oferty, draft maila i zadanie follow-up.",
@@ -547,7 +547,7 @@ const ru = {
       slug: "lead-capture-workflow",
       image: sharedImages.cs3,
       title: "Автоматизация захвата и обработки лидов",
-      client: "Автоматизация для сервисного бизнеса",
+      client: "Herbs and Spices",
       role: "Автоматизация · Маршрутизация лидов · Логика follow-up",
       summary:
         "Для сервисных компаний, получающих заявки из форм, звонков или сообщений.",
@@ -560,7 +560,7 @@ const ru = {
       slug: "offer-from-brief-workflow",
       image: sharedImages.cs4,
       title: "Автоматизация «оффер из брифа»",
-      client: "Автоматизация для B2B и сервисного бизнеса",
+      client: "Flowpilot",
       role: "Документы · Поддержка продаж · Автоматизация follow-up",
       summary:
         "Автоматизация превращает бриф клиента, заметки со звонка или резюме чата в структурированные требования, черновик оффера, черновик письма и задачу follow-up.",

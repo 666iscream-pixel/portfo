@@ -78,9 +78,9 @@ export const Nav = () => {
         </nav>
       </div>
       {/* Mobile row: lang switcher + social buttons */}
-      <div className="flex items-center justify-between gap-3 border-t border-ink/15 px-5 py-2 md:hidden">
+      <div className="flex items-center border-t border-ink/15 px-5 py-2 md:hidden">
         <LangSwitcher />
-        <div className="flex items-center gap-2">
+        <div className="hidden items-center gap-2">
           <a
             href={profile.linkedin}
             target="_blank"
