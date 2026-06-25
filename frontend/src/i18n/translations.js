@@ -219,7 +219,7 @@ const pl = {
   meta: { htmlLang: "pl" },
   nav: { work: "Prace", about: "O mnie", contact: "Kontakt", linkedin: "LinkedIn", telegram: "Telegram" },
   hero: {
-    metaLocation: "Z siedzibą w Warszawie, Polska",
+    metaLocation: "Warszawa, Polska",
     eyebrow: "Projekt stron · Development · Automatyzacja",
     headlineA: "Development, design, optymalizacja.",
     headlineB: "",
@@ -254,7 +254,7 @@ const pl = {
     eyebrow: "/ Sekcja 03 — O mnie",
     headingA: "Jak",
     headingHighlight: "pracuję.",
-    locationLabel: "Z siedzibą",
+    locationLabel: "Lokalizacja",
     location: "Warszawa, Polska",
     principles: [
       {
